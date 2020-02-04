@@ -2,7 +2,6 @@
 /*  4 no slueotion */
 
 int main()
-
 {
     printf("input a number for check====>");
     int number ; 
