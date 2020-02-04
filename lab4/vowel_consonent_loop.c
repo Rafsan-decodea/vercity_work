@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<ctype.h>
+#include<stdlib.h>
 
 
 int justis(char c)
@@ -44,7 +45,15 @@ int main()
     printf("Enter=====>");
     scanf("%c",&c);
     justis(c);
-    main();
+    // if L Press  Program Will Break
+    if (c=='L')
+       {system("exit");}
+    else
+        {main();}
+       
+    
+    
+   
 
  }
 
