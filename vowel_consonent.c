@@ -3,7 +3,7 @@
 
 int main(int argc ,char  *argv[])
 {
-  char c;
+    char c;
     int lowercase, uppercase;
     printf("Enter an alphabet: ");
     scanf("%c", &c);

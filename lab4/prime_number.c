@@ -23,4 +23,12 @@ int calculate(int n)
 
  }
 
-int main(int argc , char *argv[]) {int n = atoi(argv[1]);calculate(n);}
+int main(int argc , char *argv[]) {
+  if (argc==1){ 
+    int n = atoi(argv[1]);calculate(n);}
+  else
+  {
+      fprintf(stderr,"Uses: %s <num1 diban> ",argv[0]);
+  }
+  
+    }
