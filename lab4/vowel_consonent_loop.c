@@ -34,6 +34,7 @@ int justis(char c)
     default:
         break;
     }
+    return 0;
 
 }
 
@@ -51,10 +52,6 @@ int main()
     else
         {main();}
        
-    
-    
-   
-
- }
+    }
 
 

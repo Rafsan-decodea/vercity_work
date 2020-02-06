@@ -24,7 +24,7 @@ int calculate(int n)
  }
 
 int main(int argc , char *argv[]) {
-  if (argc==1){ 
+  if (argc==2){ 
     int n = atoi(argv[1]);calculate(n);}
   else
   {

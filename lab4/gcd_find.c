@@ -15,7 +15,7 @@ void find_gcd(int num1 , int num2)
 
 int main(int argc , char *argv[])
 {
-  if(argc==2){ 
+  if(argc==3){ 
     int num1 =atoi(argv[1]), num2=atoi(argv[2]);
     find_gcd(num1,num2);}
  else
