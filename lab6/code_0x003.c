@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include<stdlib.h>
-
-
 void result(int a, int b, int c)
 {
   int sum = a+b+c;
   printf("-------------------------------\n");
-  printf("Sum Number is ====>%d",sum);
+  printf("Sum Number is ====>%d \n",sum);
+  printf("-------------------------------\n");
 }
-
 int main(int argc , char *argv[])
 {
   if (argc==4)
@@ -20,7 +18,7 @@ int main(int argc , char *argv[])
   }
   else
   {
-     printf("Uses is :: number1  number2 number3  ");
+     printf("\nUses is :: number1  number2 number3 \n ");
   }
   
 }
