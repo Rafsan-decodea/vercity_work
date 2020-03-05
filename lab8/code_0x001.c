@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void sqr(int a){int sum= a*a ;printf("-------\n Sqr===>%d",sum);}
+void sqr(int a){int sum= a*a ;printf("--------------\n Sqr===>%d\n",sum);}
 
 int main(){int a;scanf("%d",&a,printf("Enter Number ===>"));sqr(a);}

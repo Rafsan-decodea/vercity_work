@@ -4,7 +4,7 @@
 
 void area(int a, int b,int c){int area ,s ; s = (a+b+c)/2;
           area = sqrt(s*(s-a)*(s-b)*(s-c));
-          printf("-------\n Area is===>%d",area);}
+          printf("-------\n Area is===>%d\n",area);}
 
 int main()
 {

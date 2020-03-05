@@ -1,5 +1,6 @@
 #include <stdio.h>  
 #include <string.h> 
+#include <stdlib.h>
 #include<math.h> 
 void DecimalToBinary(int decimal)
 {
@@ -15,7 +16,8 @@ void DecimalToBinary(int decimal)
     strrev(binary);  
     printf("\n-----------------------------------\n");
     printf("\nDecimal value = %ld\n", decimal);  
-    printf("Binary value of decimal = %s \n", binary);  
+    printf("Binary value of decimal = %s \n", binary); 
+    system("exit"); 
 }
 void BinaryToDecimal(int n  )
 {
@@ -29,6 +31,7 @@ void BinaryToDecimal(int n  )
 		n=n/10;
 	}
 	printf("[+]Decimal value of Binary ==> %ld \n",x);
+    system("exit"); 
 }
 int main()  
 {  
@@ -39,7 +42,7 @@ int main()
            long decimal ;
            scanf("%ld", &decimal,printf("Enter any decimal value ====>: "));  
            DecimalToBinary(decimal);}
-   if (select == 2)
+   else if (select == 2)
    {
       long int n;
 	  scanf("%ld",&n,printf("Enter any binary number:====> "));
