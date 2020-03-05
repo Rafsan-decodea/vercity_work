@@ -8,17 +8,14 @@ void DecimalToBinary(int decimal)
     while(tempDecimal!=0)  
     {  
         binary[index] = (tempDecimal % 2) + '0';  
-
         tempDecimal /= 2;  
         index++;  
     }  
     binary[index] = '\0';  
-
     strrev(binary);  
     printf("\n-----------------------------------\n");
     printf("\nDecimal value = %ld\n", decimal);  
     printf("Binary value of decimal = %s \n", binary);  
-
 }
 void BinaryToDecimal(int n  )
 {
@@ -26,16 +23,13 @@ void BinaryToDecimal(int n  )
      printf("\n-----------------------------------\n");
      printf("\n[+]Binary value is = %ld\n", n);   
 	for(i=0;n!=0;++i)
-	{ 
-     
-		a=n%10;
+	{   
+        a=n%10;
 		x=(a)*(pow(2,i))+x;
 		n=n/10;
 	}
-	
-	  printf("[+]Decimal value of Binary ==> %ld \n",x);
+	printf("[+]Decimal value of Binary ==> %ld \n",x);
 }
-
 int main()  
 {  
    int select;
@@ -58,6 +52,4 @@ int main()
        main();
    }
    
-    
-    
 } 
