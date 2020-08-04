@@ -53,6 +53,31 @@ void displaylist(node * head )
 }
 
 
+void delete_1st_node(node * head)
+{
+    node * temp;
+    temp = head;
+    head = head->next_ptr;
+    free(temp);
+    printf("\n--------------------\n[+]   Displaying node's  after Delete 1st node.....");
+    while(head->next_ptr != NULL)
+    {
+        
+        printf("\t%d=>",head->data);
+        head = head->next_ptr;
+    }
+
+
+}
+
+void delete_last_node(node * head)
+{
+    // This will code  will letter
+}
+
+
+
+
 
 int main ()
 
@@ -63,6 +88,9 @@ int main ()
     scanf("%d",&n);
     head = create_list(n);
     displaylist(head);
+    delete_1st_node(head);
+   
+
     return 0;
 
 }
