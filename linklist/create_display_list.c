@@ -15,7 +15,7 @@ node * create_list(int n)
    node * head = NULL;
    node * temp = NULL;
    node * p = NULL;
-    for (i=0;i<=n;i++) // using for loop 
+    for (i=1;i<=n;i++) // using for loop 
     {
         temp = (node *)malloc(sizeof(node));
         printf("\n [+] OK now Enter the Deta [%d] ==>",i);
@@ -70,11 +70,19 @@ void delete_1st_node(node * head)
 
 }
 
-void delete_last_node(node * head)
-{
-    // This will code  will letter
-}
+void count_in_list(node * head)
 
+{
+    int count= 0;
+    node * current = head;
+    while(current !=NULL)
+    {
+        count++;
+        current = current->next_ptr;
+
+    }
+    printf("\n\n-----------\n[+]Link list length is ===>%d\n",count);
+}
 
 
 
@@ -87,6 +95,7 @@ int main ()
     printf("[+] Enter the Frist node ===>");
     scanf("%d",&n);
     head = create_list(n);
+    count_in_list(head);
     displaylist(head);
     delete_1st_node(head);
    
