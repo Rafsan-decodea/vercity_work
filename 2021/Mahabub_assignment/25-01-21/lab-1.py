@@ -2,8 +2,8 @@ print ("-----+++++ Implement Stack in With User Input +++++------\n")
 
 def implement_stack(data):
      stack = []
-     for x in str(data):
-        stack.append(int(x))
+     for x in data:
+        stack.append(x)
      if stack:
        try:
         def push_pop():
