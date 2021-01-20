@@ -2,23 +2,22 @@ print ("=============++++POSTFIX Operation========____++_\n")
 
 def postfix(data):
      stack = []
-     number = []
-     degite = []
-     index = []
      for x in data:
          stack.append(x)
-     for y in range(0,len(stack)):
-             if stack[y].isdigit():
-                number.append(stack[y])
-             else :
+     for y in range(len(stack)):
+             if stack[y].isdigit() !=True :
                 if stack[y] == "*":
-                   temp = stack[y-1]
-                   temp1= stack[y-2]
-                   data = int(temp)*int(temp1)
-                   stack.append(str(data))
-                   stack.remove(temp)
-                   stack.remove(temp1)
-                   print (stack)
+                      temp = stack[y-1]
+                      temp1= stack[y-2]
+                      data = int(temp)*int(temp1)
+                      stack.remove(stack[y])
+                      stack.append(str(data))
+                      stack.remove(temp)
+                      stack.remove(temp1)
+                      print (stack)
+                elif stack[y] =="+":
+                    pass
+
 
 
 
