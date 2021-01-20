@@ -12,13 +12,13 @@ def postfix(data):
                 number.append(stack[y])
              else :
                 if stack[y] == "*":
-                   temp = stack.index(stack[y])-1
-                   temp1= stack.index(stack[y])
-                   data = temp*temp1
-     print (stack.index(stack[y])-1)
-     print stack[y]
-     print stack.index(stack[y])
-     print data , stack
+                   temp = stack[y-1]
+                   temp1= stack[y-2]
+                   data = int(temp)*int(temp1)
+                   stack.append(str(data))
+                   stack.remove(temp)
+                   stack.remove(temp1)
+                   print (stack)
 
 
 
