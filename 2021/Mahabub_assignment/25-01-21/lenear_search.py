@@ -16,3 +16,4 @@ def leaner_search(data):
 if __name__ == "__main__":
    data = raw_input("[+]input data For Store ===>").split(',')
    leaner_search(data)
+   #asdasd
