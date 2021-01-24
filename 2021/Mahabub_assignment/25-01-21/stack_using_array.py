@@ -17,7 +17,7 @@ def implement_stack(data):
           if choose == 1:
              print("-"*10)
              data = input("input index For pop From Stack===>")
-             try:
+             try:# use for if stack is failed
               stack.pop(data)
               print ("[++] After Drop Your  index {} Now Stack ===> {}".format(data,stack))
              except:
@@ -42,7 +42,7 @@ def implement_stack(data):
             print("-"*10)
             print("[???] input Valide Choose")
             push_pop()
-       except Exception as msg:
+       except Exception as msg:#if something is really Unacceptable erro Delected
           print("[!] Some Thing Went Wrong Because ===>{}".format(msg))
      push_pop()
 
