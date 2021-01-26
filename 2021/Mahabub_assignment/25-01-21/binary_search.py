@@ -34,5 +34,5 @@ if  __name__ == "__main__":
         print ("[+] Yes Your input data ({}) is found in ({}) ".format(inp_data,list))
      else:
         print ("!"*10)
-        print ("[-] No Your data ({}) is not found in  ({}) ".format(input_data,list))
+        print ("[-] No Your data ({}) is not found in  ({}) ".format(inp_data,list))
 

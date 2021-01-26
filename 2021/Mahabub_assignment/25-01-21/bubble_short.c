@@ -13,15 +13,21 @@ void bubble_sort(int a[], int n) {
     }
 }
 int main() {
+  printf("\n-------Short Arry using Bubbole Short Program-------\n");
   int a[100], n, i;
-  printf("Enter number of elements in the array:\n");
+  printf("[+]Define your array Size ==>");
   scanf("%d", &n); 
-  printf("Enter %d integers=====>", n);
   for (i = 0; i < n; i++)
+  {
+    printf("[+] Ok now you Enter for  No in Arry[%d]==>",i);
     scanf("%d", &a[i]);
+  }
   bubble_sort(a, n);
-  printf("Printing the sorted array:\n");
+  printf("\n-------======---------\n");
+  printf("[+] Operation Compleate ... Now your your Shorted  Array is:===>");
   for (i = 0; i < n; i++)
-     printf("%d\n", a[i]);
+  {
+     printf("%d ", a[i]);
+  }
   return 0;
 }
