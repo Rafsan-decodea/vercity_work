@@ -1,33 +1,33 @@
+/* C Program to sort an array in ascending order using Insertion Sort */
 #include <stdio.h>
-
-void bubble_sort(int a[], int n) {
-    int i = 0, j = 0, tmp;
-    for (i = 0; i < n; i++) {   // loop n times - 1 per element
-        for (j = 0; j < n - i - 1; j++) { // last i elements are sorted already
-            if (a[j] > a[j + 1]) {  // swop if order is broken
-                tmp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = tmp;
-            }
-        }
+int main()
+{
+    int n, i, j, temp;
+    int arr[64];
+ 
+    printf("Enter number of elements\n");
+    scanf("%d", &n);
+ 
+    printf("Enter %d integers\n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
     }
-}
-int main() {
-  printf("\n-------Short Arry using Bubbole Short Program-------\n");
-  int a[100], n, i;
-  printf("[+]Define your array Size ==>");
-  scanf("%d", &n); 
-  for (i = 0; i < n; i++)
-  {
-    printf("[+] Ok now you Enter for  No in Arry[%d]==>",i);
-    scanf("%d", &a[i]);
-  }
-  bubble_sort(a, n);
-  printf("\n-------======---------\n");
-  printf("[+] Operation Compleate ... Now your your Shorted  Array is:===>");
-  for (i = 0; i < n; i++)
-  {
-     printf("%d ", a[i]);
-  }
-  return 0;
+    for (i = 1 ; i <= n - 1; i++)
+    {
+	    j = i;
+            while ( j > 0 && arr[j-1] > arr[j])
+            {	        
+                temp     = arr[j];
+                arr[j]   = arr[j-1];
+                arr[j-1] = temp;
+                j--;
+            }
+    }
+    printf("Sorted list in ascending order:\n");
+    for (i = 0; i <= n - 1; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
+    return 0;
 }
