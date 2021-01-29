@@ -28,6 +28,7 @@ def interpol(data):
 
 
 
+
 if __name__ == "__main__":
     data = raw_input("[+] input data  in Stack (Use Space) ===>").split(" ")
     interpol(data)# 1 3 5 7 9 11 13 15
