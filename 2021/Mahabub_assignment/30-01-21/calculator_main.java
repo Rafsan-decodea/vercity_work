@@ -9,69 +9,88 @@ class calculator_main{
     {
 		Scanner input  = new Scanner(System.in);
     	System.out.print("\n=====Addition Sectior=======\n");
-		System.out.print("[+] input your 1st data ===>");
+		System.out.print("[+] input How many intiger you want sum ===>");
 		int data = input.nextInt();
-		// System.out.print("[+] input you 2nd number====>");
-		// int input2 = input.nextInt();
-		// int result = input1+input2;
-		// System.out.print("[+] OK your 2 digite summition is ===>"+result);
+		
+		//ArrayList<Integer> dataList = new ArrayList<Integer>();
+       // List<Integer> dataList = Arrays.asList(data);
+        //int sum = MathUtils.sum(dataList);
+      int[] array = new int[100];
+      int sum = 0;
+      
+      for (int i=0; i<data; i++)
+      {
+      	  String formate = String.format("[-] Enter the Element[%x] ==>",i);
+      	  System.out.print(formate);
+    	  array[i] = input.nextInt();
+      }
+      for( int num : array) {
+          sum = sum+num;
+      }
+      System.out.println("[+] Sum of array elements is:===>"+sum);
 
-		ArrayList<Integer>input1 = new ArrayList<Integer>();
-        int s ;
-		for (int i=0 ; i<=data;i++)
-		{
-		    input1.add(i);
-		}
-	   for (int i=0;i<=data;i++)
-	     {
-
-	        System.out.print(input1);
-	     }
-
+		
 
  }
 
      static void  sub()
     {
+	  int c = 0;
+	  while(c<100)
+	  {
 		Scanner input  = new Scanner(System.in);
-    	System.out.print("\n=====Substract Section=======\n");
-		System.out.print("[+] input your 1st data ===>");
-		int input1 = input.nextInt();
-		System.out.print("[+] input you 2nd number====>");
-		int input2 = input.nextInt();
-		int result = input1-input2;
-		System.out.print("[+] OK your 2 digite Substraction is ===>"+result);
+    	System.out.print("\n=====Subtract Sectior=======\n");
+		System.out.print("[+] Input 1st number ===>");
+		int data = input.nextInt();
+		System.out.print("[+] input 2nd  number===>");
+		int data2 = input.nextInt();
+		int result = data-data2;
+		System.out.print("\n\t[+] Sum Result is ==>"+result);
+		System.out.print("\n[-]Do you want more Operation(for Yes press 1)===> ");
+		int yes_no = input.nextInt();
+		if (yes_no==1)
+		{
+			calculator_main m = new calculator_main();
+			m.sub();
+		}
+		else{
+			break;
+		}
+	}
+		
+
+
     
     }
 
    static void multiple()
     {
-    	Scanner input  = new Scanner(System.in);
-    	System.out.print("\n=====multliplication Section=======\n");
-		System.out.print("[+] input your 1st data ===>");
-		int input1 = input.nextInt();
-		System.out.print("[+] input you 2nd number====>");
-		int input2 = input.nextInt();
-		int result = input1*input2;
-		System.out.print("[+] OK your 2 digite multiplicaton is ===>"+result);
+    	int c = 0;
+	  while(c<100)
+	  {
+		Scanner input  = new Scanner(System.in);
+    	System.out.print("\n=====multiplication Sectior=======\n");
+		System.out.print("[+] Input 1st number ===>");
+		int data = input.nextInt();
+		System.out.print("[+] input 2nd  number===>");
+	    int data2 = input.nextInt();
+		int result = data*data2;
+		System.out.print("\n\t[+] Sum Result is ==>"+result);
+		System.out.print("\n[-]Do you want more Operation(for Yes press 1)===> ");
+		int yes_no = input.nextInt();
+		if (yes_no==1)
+		{
+			calculator_main m = new calculator_main();
+			m.sub();
+		}
+		else{
+			break;
+		}
     }
 
-   static void division()
-    {
-    	Scanner input  = new Scanner(System.in);
-    	System.out.print("\n=====Divition Section=======\n");
-		System.out.print("[+] input your 1st data ===>");
-		int input1 = input.nextInt();
-		System.out.print("[+] input you 2nd number====>");
-		int input2 = input.nextInt();
-		int result = input1/input2;
-		System.out.print("[+] OK your 2 digite divition is ===>"+result);
-    	
-    }
 
 
-
-	public static void main(String[] args) {
+public static void main(String[] args) {
 
 		Scanner input  = new Scanner(System.in);
 		int i = 0;
@@ -125,4 +144,5 @@ class calculator_main{
 
 		
 	}
+}
 }
