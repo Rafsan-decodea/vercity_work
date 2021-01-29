@@ -17,15 +17,16 @@ class calculator_main{
 		// System.out.print("[+] OK your 2 digite summition is ===>"+result);
 
 		ArrayList<Integer>input1 = new ArrayList<Integer>();
-
+        int s ;
 		for (int i=0 ; i<=data;i++)
 		{
-		   input1.add(i);
+		    input1.add(i);
 		}
 	   for (int i=0;i<=data;i++)
-	 {
-	   System.out.print(input1.get(i));
-	 }
+	     {
+
+	        System.out.print(input1);
+	     }
 
 
  }
