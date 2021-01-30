@@ -142,7 +142,7 @@ static void trigono()
 			 float sign = input.nextFloat();
 			 String sing_format = String.format("\n\t[+] This %2f Sign value is ===>%2f\n",sign,Math.sin(sign));
 			 System.out.print(sing_format);
-			 history.add("[+] Ans from Trigonomiti Sign "+sing_format);
+			 history.add("[+] Ans from Trigonomiti Sign "+sign);
 		 }
 		 else if(chooise==2)
 		 {
@@ -151,7 +151,7 @@ static void trigono()
 			float cos = input.nextFloat();
 			String cos_format = String.format("\n\t[+] This %2f Cos value is ===>%2f\n",cos,Math.cos(cos));
 			System.out.print(cos_format);
-			history.add("[+] Ans from Trigonomiti cos"+cos_format);
+			history.add("[+] Ans from Trigonomiti cos"+cos);
                
 		 }
 		 else if (chooise==3)
@@ -161,7 +161,7 @@ static void trigono()
 			float tan = input.nextFloat();
 			String tan_format = String.format("\n\t[+] This %2f Tan value is ===>%2f\n",tan,Math.sin(tan));
 			System.out.print(tan_format);
-			history.add("[+]  Ans from Trigonomiti  Tan"+tan_format);
+			history.add("[+]  Ans from Trigonomiti  Tan"+tan);
 
 		 }
 		 else if (chooise==4)
@@ -171,7 +171,7 @@ static void trigono()
 			double  sqroot = input.nextDouble();
 			String sqroot_format = String.format("\n\t[+] This %2f Sign value is ===>%2f\n",sqroot,Math.sqrt(sqroot));
 			System.out.print(sqroot_format);
-			history.add("[+]  Ans from Trigonomiti sqroot "+sqroot_format);
+			history.add("[+]  Ans from Trigonomiti sqroot "+sqroot);
 
 		 }
 		 else if (chooise==5)
@@ -181,7 +181,7 @@ static void trigono()
 			float pi = input.nextFloat();
 			String pi_format = String.format("\n\t[+] This %2f Sign value is ===>%2f\n",pi,(Math.PI*pi));
 			System.out.print(pi_format);
-			history.add("[+]  Ans from Trigonomiti pi "+pi_format);
+			history.add("[+]  Ans from Trigonomiti pi "+pi);
 
 		 }
 		 else if (chooise==6)
@@ -193,7 +193,7 @@ static void trigono()
 			double pow = input.nextDouble();
 			String pow_format = String.format("\n\t[+] This %2f Sign value is ===>%2f\n",data,Math.pow(data, pow));
 			System.out.print(pow_format);
-			history.add("[+]  Ans from Trigonomiti pow "+pow_format);
+			history.add("[+]  Ans from Trigonomiti pow "+pow);
 		 }
 
 		 System.out.print("[!] Do you Want continue This Trigonomiti Sector (Press 1 for Yes / No For 2)==>");
@@ -277,9 +277,9 @@ public static void main(String[] args) {
 		 {
 			 try{
 				 System.out.println("\n=========Printing History=========\n");
-				 for (int j=0 ; j<=history.size(); j++)
+				 for (int j=0 ; j<=history.size()-1; j++)
 				 {
-					 System.out.println(history.get(i));
+					 System.out.println(history.get(j));
 				 }
 
 			 }
