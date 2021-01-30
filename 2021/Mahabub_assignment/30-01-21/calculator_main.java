@@ -29,9 +29,7 @@ class calculator_main{
       }
       System.out.println("[+] Sum of array elements is:===>"+sum);
 
-		
-
- }
+	}
 
      static void  sub()
     {
@@ -127,8 +125,20 @@ static void trigono()
 		 System.out.print("[+] input one number for See all Trigonomiti Value There===>");
 		 float data = input.nextFloat();
 		 System.out.println("==========");
-		 String sign = String.format("[-] Sign for your (%f) number is %f ==>",data,Math.sin(data));
-		 System.out.print(sign);
+		 String sign = String.format("[-] Sign value for your (%f) number is==> %2f",data,Math.sin(data));
+		 String  cos = String.format("[-] Cos value for your (%f) number is==>%2f",data, Math.cos(data));
+		 String  tan = String.format("[-] Tan vlaue for your (%f) number is==>%f",data,Math.tan(data));
+		 System.out.println(sign);
+		 System.out.println(cos);
+		 System.out.println(tan);
+		 if (yes_no==1)
+		{
+			calculator_main m = new calculator_main();
+			m.trigono();
+		}
+		else{
+			break;
+		}
 	 }
 }
 
@@ -192,7 +202,8 @@ public static void main(String[] args) {
 				System.out.print("\n[+] Some this Went Wrong in Division ... Try Again\n");
 			 }
 		 }
-        }
+		
+	}
 
 		
 	}
