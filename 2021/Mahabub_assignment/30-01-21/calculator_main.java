@@ -117,6 +117,21 @@ static  void division()
 
 }
 
+static void trigono()
+{
+	 int c = 0;
+	 while(c<100)
+	 {
+		 Scanner input = new Scanner(System.in);
+		 System.out.print("\n==========Trigonomiti Sector========\n");
+		 System.out.print("[+] input one number for See all Trigonomiti Value There===>");
+		 float data = input.nextFloat();
+		 System.out.println("==========");
+		 String sign = String.format("[-] Sign for your (%f) number is %f ==>",data,Math.sin(data));
+		 System.out.print(sign);
+	 }
+}
+
 
 public static void main(String[] args) {
 
@@ -129,6 +144,7 @@ public static void main(String[] args) {
 		 System.out.println("2) input tow For  subtract ");
 		 System.out.println("3) input three for Multiplication");
 		 System.out.println("4) input four for division");
+		 System.out.println("5) input five for Go Trigono Martic Sector");
 		 System.out.println("=============================");
 		 System.out.print("[+] input your Chose===>");
 		 int chooise = input.nextInt();
@@ -167,6 +183,14 @@ public static void main(String[] args) {
 		    {
 		    	System.out.print("\n[+] Some this Went Wrong in Division ... Try Again\n");
 		    }	
+		 }
+		 else if(chooise==5)
+		 {
+			 try{trigono();}
+			 catch(Exception e)
+			 {
+				System.out.print("\n[+] Some this Went Wrong in Division ... Try Again\n");
+			 }
 		 }
         }
 
