@@ -87,7 +87,35 @@ class calculator_main{
 			break;
 		}
     }
+}
 
+
+static  void division()
+{
+	int c = 0;
+	  while(c<100)
+	  {
+		Scanner input  = new Scanner(System.in);
+    	System.out.print("\n=====Division Sectior=======\n");
+		System.out.print("[+] Input 1st number ===>");
+		int data = input.nextInt();
+		System.out.print("[+] input 2nd  number===>");
+	    float data2 = input.nextInt();
+		float  result = data/data2;
+		System.out.print("\n\t[+] Sum Result is ==>"+result);
+		System.out.print("\n[-]Do you want more Operation(for Yes press 1)===> ");
+		int yes_no = input.nextInt();
+		if (yes_no==1)
+		{
+			calculator_main m = new calculator_main();
+			m.sub();
+		}
+		else{
+			break;
+		}
+    }
+
+}
 
 
 public static void main(String[] args) {
@@ -144,5 +172,4 @@ public static void main(String[] args) {
 
 		
 	}
-}
 }
