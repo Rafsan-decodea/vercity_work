@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 class calculator_main{
-	
+	public static ArrayList history = new ArrayList();
     static void  add()
     {
 		Scanner input  = new Scanner(System.in);
@@ -27,7 +27,8 @@ class calculator_main{
       for( int num : array) {
           sum = sum+num;
       }
-      System.out.println("[+] Sum of array elements is:===>"+sum);
+	  System.out.println("[+] Sum of array elements is:===>"+sum);
+	  history.add("[+]Ans From Addition==> "+sum);
 
 	}
 
@@ -44,6 +45,7 @@ class calculator_main{
 		int data2 = input.nextInt();
 		int result = data-data2;
 		System.out.print("\n\t[+] Sum Result is ==>"+result);
+		history.add("[+]Ans From  Subtract ==>"+result);
 		System.out.print("\n[-]Do you want more Operation(for Yes press 1)===> ");
 		int yes_no = input.nextInt();
 		if (yes_no==1)
@@ -74,6 +76,7 @@ class calculator_main{
 	    int data2 = input.nextInt();
 		int result = data*data2;
 		System.out.print("\n\t[+] Sum Result is ==>"+result);
+		history.add("[+]Ans From Multiple==>"+result);
 		System.out.print("\n[-]Do you want more Operation(for Yes press 1)===> ");
 		int yes_no = input.nextInt();
 		if (yes_no==1)
@@ -101,6 +104,7 @@ static  void division()
 	    float data2 = input.nextInt();
 		float  result = data/data2;
 		System.out.print("\n\t[+] Sum Result is ==>"+result);
+		history.add("[+]Ans From Division"+result);
 		System.out.print("\n[-]Do you want more Operation(for Yes press 1)===> ");
 		int yes_no = input.nextInt();
 		if (yes_no==1)
@@ -122,15 +126,78 @@ static void trigono()
 	 {
 		 Scanner input = new Scanner(System.in);
 		 System.out.print("\n==========Trigonomiti Sector========\n");
-		 System.out.print("[+] input one number for See all Trigonomiti Value There===>");
-		 float data = input.nextFloat();
-		 System.out.println("==========");
-		 String sign = String.format("[-] Sign value for your (%f) number is==> %2f",data,Math.sin(data));
-		 String  cos = String.format("[-] Cos value for your (%f) number is==>%2f",data, Math.cos(data));
-		 String  tan = String.format("[-] Tan vlaue for your (%f) number is==>%f",data,Math.tan(data));
-		 System.out.println(sign);
-		 System.out.println(cos);
-		 System.out.println(tan);
+		 System.out.println("1) Press one for Sign Value for your input ");
+		 System.out.println("2) Press two for Cos value for your input  ");
+		 System.out.println("3) Press Three for Tan Value for your input");
+		 System.out.println("4) Press Four for Squroot For  yout input ");
+		 System.out.println("5) Press Five for Pi value for your input");
+		 System.out.println("6) Press SIX for Root Over for your input");
+		 System.out.println("========================================");
+		 System.out.print("[+] input your Choose===>");
+		 int chooise = input.nextInt();
+		 if (chooise==1) 
+		 {
+			 System.out.println("================================");
+			 System.out.print("\n[+] Input your Value for Sine=====>");
+			 float sign = input.nextFloat();
+			 String sing_format = String.format("\n\t[+] This %2f Sign value is ===>%2f\n",sign,Math.sin(sign));
+			 System.out.print(sing_format);
+			 history.add("[+] Ans from Trigonomiti Sign "+sing_format);
+		 }
+		 else if(chooise==2)
+		 {
+			System.out.println("================================");
+			System.out.print("\n[+] Input your Value for Cose=====>");
+			float cos = input.nextFloat();
+			String cos_format = String.format("\n\t[+] This %2f Cos value is ===>%2f\n",cos,Math.cos(cos));
+			System.out.print(cos_format);
+			history.add("[+] Ans from Trigonomiti cos"+cos_format);
+               
+		 }
+		 else if (chooise==3)
+		 {
+			System.out.println("================================");
+			System.out.print("\n[+] Input your Value for Tan=====>");
+			float tan = input.nextFloat();
+			String tan_format = String.format("\n\t[+] This %2f Tan value is ===>%2f\n",tan,Math.sin(tan));
+			System.out.print(tan_format);
+			history.add("[+]  Ans from Trigonomiti  Tan"+tan_format);
+
+		 }
+		 else if (chooise==4)
+		 {
+			System.out.println("================================");
+			System.out.print("\n[+] Input your Value for Sqroot=====>");
+			double  sqroot = input.nextDouble();
+			String sqroot_format = String.format("\n\t[+] This %2f Sign value is ===>%2f\n",sqroot,Math.sqrt(sqroot));
+			System.out.print(sqroot_format);
+			history.add("[+]  Ans from Trigonomiti sqroot "+sqroot_format);
+
+		 }
+		 else if (chooise==5)
+		 {
+			System.out.println("================================");
+			System.out.print("\n[+] Input your Value for multiplay with PI =====>");
+			float pi = input.nextFloat();
+			String pi_format = String.format("\n\t[+] This %2f Sign value is ===>%2f\n",pi,(Math.PI*pi));
+			System.out.print(pi_format);
+			history.add("[+]  Ans from Trigonomiti pi "+pi_format);
+
+		 }
+		 else if (chooise==6)
+		 {
+			System.out.println("================================");
+			System.out.print("\n[+] Input your Value=====>");
+			double data = input.nextDouble();
+			System.out.print("\n[+] input Pow value===>");
+			double pow = input.nextDouble();
+			String pow_format = String.format("\n\t[+] This %2f Sign value is ===>%2f\n",data,Math.pow(data, pow));
+			System.out.print(pow_format);
+			history.add("[+]  Ans from Trigonomiti pow "+pow_format);
+		 }
+
+		 System.out.print("[!] Do you Want continue This Trigonomiti Sector (Press 1 for Yes / No For 2)==>");
+		 int yes_no = input.nextInt();
 		 if (yes_no==1)
 		{
 			calculator_main m = new calculator_main();
@@ -155,6 +222,7 @@ public static void main(String[] args) {
 		 System.out.println("3) input three for Multiplication");
 		 System.out.println("4) input four for division");
 		 System.out.println("5) input five for Go Trigono Martic Sector");
+		 System.out.println("6) Press 6 For see history");
 		 System.out.println("=============================");
 		 System.out.print("[+] input your Chose===>");
 		 int chooise = input.nextInt();
@@ -174,7 +242,7 @@ public static void main(String[] args) {
             catch(Exception e)
             {
             	System.out.print("\n[+] Some this Went Wrong in subtracting ... Try Again\n");
-
+				System.out.print(e);
             }	
 		 }
 		 else if (chooise == 3)
@@ -183,7 +251,7 @@ public static void main(String[] args) {
 		 	catch(Exception e)
 		 	{
 		 		System.out.print("\n[+] Some this Went Wrong in Multiplication ... Try Again\n");
-
+				 System.out.print(e);
 		 	}
 		 }
 		 else if (chooise ==4) 
@@ -191,7 +259,8 @@ public static void main(String[] args) {
 		    try{division();}
 		    catch(Exception e)
 		    {
-		    	System.out.print("\n[+] Some this Went Wrong in Division ... Try Again\n");
+				System.out.print("\n[+] Some this Went Wrong in Division ... Try Again\n");
+				System.out.print(e);
 		    }	
 		 }
 		 else if(chooise==5)
@@ -200,6 +269,23 @@ public static void main(String[] args) {
 			 catch(Exception e)
 			 {
 				System.out.print("\n[+] Some this Went Wrong in Division ... Try Again\n");
+				System.out.print(e);
+			 }
+		 }
+
+		 else if(chooise==6)
+		 {
+			 try{
+				 System.out.println("\n=========Printing History=========\n");
+				 for (int j=0 ; j<=history.size(); j++)
+				 {
+					 System.out.println(history.get(i));
+				 }
+
+			 }
+			 catch(Exception e)
+			 {
+				 System.out.print("\n[!!] some Think Wrong for \n"+e);
 			 }
 		 }
 		
