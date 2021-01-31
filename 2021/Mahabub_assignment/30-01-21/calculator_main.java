@@ -20,7 +20,7 @@ class calculator_main{
       
       for (int i=0; i<data; i++)
       {
-      	  String formate = String.format("[-] Enter the Element[%x] ==>",i);
+      	  String formate = String.format("[-] Enter the Element[%d] ==>",i);
       	  System.out.print(formate);
     	  array[i] = input.nextInt();
       }
