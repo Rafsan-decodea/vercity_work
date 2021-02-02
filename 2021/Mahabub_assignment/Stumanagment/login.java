@@ -6,37 +6,35 @@ import java.sql.*;
 
 class login{
 
-     private Connection con;
-     private Statement st;
-     private ResultSet rs;
-     void hello()
+     void  hello()
      {
-     try{
-        Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/softek", "root", "");
-        st = con.createStatement();
+      try{
 
-     }
-     catch(Exception e)
-     {
-       System.out.print(e);
-     }
+          Class.forName("com.mysql.cj.jdbc.Driver");  
+          Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/java_project","root","");  
+//here sonoo is database name, root is username and password  
+          Statement stmt=con.createStatement();  
+          ResultSet rs=stmt.executeQuery("select * from users");  
+         // while(rs.next())  
+         // { 
+            // System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
+            rs.next();
+             System.out.print(rs.getString(1));
+             String data = "admin";
+            if (rs.getString(1)==data)
+            {
+              System.out.print("login");
+            } 
+            else{
+              System.out.print("False");
+            }   
+      //}   
+        }      
+        catch(Exception e){ System.out.println(e);}  
 
-      
-     }
+  
 
 
-  void get_data()
-  {
-      String query = "select * from app1_booklist";
-      rs = st.executeQuery(query);
-       
-      while(rs.next())
-      {
-          System.out.print(rs.getString(0));
-      }
-
-  }
-
+} 
 
 }
