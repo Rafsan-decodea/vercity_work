@@ -1,9 +1,6 @@
 import java.util.*;
 
-class register{
-
-	 ArrayList stu_register_array = new ArrayList();
-	 ArrayList teacher_register_array = new ArrayList();
+class register extends index{
 
 	 void stu_register()
 	 {
@@ -11,12 +8,15 @@ class register{
 	 	System.out.println("\n\n=========Welcome to Studnet Register ==========\n\n");
         System.out.print("[+] Username ===>");
         String username = input.next();
-        stu_register_array.add(username);
+        this.stu_register_array.add(username);
         System.out.print("[+] Password ===>");
         String password = input.next();
-        stu_register_array.add(password);
+        this.stu_register_array.add(password);
         System.out.print("\n===========================\n");
         System.out.print("[+] Data recorded");
+        System.out.print(this.stu_register_array.size());
+        index index = new index();
+        index.main();
 
 	 }
 	 void teacher_register ()
@@ -31,6 +31,8 @@ class register{
         teacher_register_array.add(password);
         System.out.print("\n===========================\n");
         System.out.print("[+] Data recorded");
+        login login = new login();
+        login.teacher_login();
 
 	 }
 }

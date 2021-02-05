@@ -4,7 +4,7 @@ import java.sql.*;
 
 class login {
  
-  void login_()
+  void login_()  
         {   
           System.out.println("1) For AS a Student");
           System.out.println("2) For Teacher Logine");
