@@ -24,7 +24,7 @@ class auth extends register{
 
      void auth_teacher(String username , String password)
      {
-          if (teacher_register_array.get(0).equals(username) && teacher_register_array.get(0).equals(password)
+          if (teacher_register_array.get(0).equals(username) && teacher_register_array.get(0).equals(password))
           {
                System.out.print("Logine");
           }

@@ -5,7 +5,8 @@ class index{
 	public static  ArrayList stu_register_array = new ArrayList();
 	public static  ArrayList teacher_register_array = new ArrayList();
 
-	public static void main(String[] String args) {
+	 void do_main()
+	 {
 		System.out.print("\n======Welcome To our Studnet management System=========\n");
 		System.out.println("1) Login ");
 		System.out.println("2) Register");
@@ -57,4 +58,12 @@ class index{
         	}
         }
 	}
+	 
+	public static void main(String[] args) {
+	
+	  index index = new index();
+	  index.do_main();
+
+ }
+
 }

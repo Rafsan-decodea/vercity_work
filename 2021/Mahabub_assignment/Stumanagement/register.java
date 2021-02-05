@@ -16,7 +16,8 @@ class register extends index{
         System.out.print("[+] Data recorded");
         System.out.print(this.stu_register_array.size());
         index index = new index();
-        index.main();
+        index.do_main();
+        
 
 	 }
 	 void teacher_register ()
@@ -31,8 +32,7 @@ class register extends index{
         teacher_register_array.add(password);
         System.out.print("\n===========================\n");
         System.out.print("[+] Data recorded");
-        login login = new login();
-        login.teacher_login();
-
+        index index = new index();
+        index.do_main();
 	 }
 }
