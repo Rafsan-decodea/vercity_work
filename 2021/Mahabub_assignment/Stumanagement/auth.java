@@ -1,24 +1,34 @@
 import java.util.*;
 
-import javax.lang.model.util.ElementScanner14;
+
 
 class auth extends register{
 
      void auth_student(String username, String password)
      {
-            
+       
+      for (int i=0; i<stu_register_array.size();i++)
+      {  
+  
 
-        if (stu_register_array.get(0).equals(username) && stu_register_array.get(1).equals(password))
+        if (stu_register_array.get(i).equals(username))
         {
-            System.out.print("Login");
+             if(stu_register_array.get(i+1).equals(password))
+             {
+             	System.out.print("LOgin");
+             }
 
         }
-        else{
-
-            System.out.print("Not LOgin");
-            System.out.print(stu_register_array.get(0));
+        else
+        {
+        	      System.out.print(i+" From Frist i \n"); 
+        	            System.out.print(i+1+" From Second i \n");   
+        	//System.out.print(stu_register_array.get(i));
         }
 
+      }  
+      System.out.print("not LOgin");
+        
 
      }
 

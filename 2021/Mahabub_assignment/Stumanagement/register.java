@@ -14,7 +14,6 @@ class register extends index{
         this.stu_register_array.add(password);
         System.out.print("\n===========================\n");
         System.out.print("[+] Data recorded");
-        System.out.print(this.stu_register_array.size());
         index index = new index();
         index.do_main();
         
