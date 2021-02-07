@@ -4,7 +4,8 @@ class index{
 
 	public static  ArrayList stu_register_array = new ArrayList();
 	public static  ArrayList teacher_register_array = new ArrayList();
-
+    public static  ArrayList stu_user_id = new ArrayList();
+    public static  ArrayList teacher_user_id = new ArrayList();
 	 void do_main()
 	 {
 		System.out.print("\n======Welcome To our Studnet management System=========\n");
