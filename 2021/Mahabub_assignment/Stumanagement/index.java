@@ -1,9 +1,10 @@
 import java.util.*;
+import java.util.HashMap;
 
 class index{
 
-	public static  ArrayList stu_register_array = new ArrayList();
-	public static  ArrayList teacher_register_array = new ArrayList();
+	public static  HashMap<String,List<>>  stu_register_array = new HashMap ();
+	public static  HashMap teacher_register_array = new HashMap ();
     public static  ArrayList stu_user_id = new ArrayList();
     public static  ArrayList teacher_user_id = new ArrayList();
 	 void do_main()

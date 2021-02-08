@@ -1,18 +1,31 @@
 import java.util.*;
 
+import javax.lang.model.element.Element;
+
 
 
 class auth extends register{
 
      void auth_student(String username, String password)
      {
-       
-      for (int i=0; i<stu_register_array.size();i++)
-      {  
-        
+     System.out.print("\n"+this.stu_register_array);
+   
+           if(stu_register_array.containsValue(username)&&stu_register_array.containsValue(password))
+           {
+                System.out.print("logine");
+
+           }
+           else
+           { 
+                
+              System.out.print("not LOgin");
+                
+
+           }
+
            
-      }  
-      System.out.print("not LOgin");
+   
+     
         
 
      }
