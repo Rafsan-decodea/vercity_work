@@ -31,6 +31,7 @@ void auth_teacher( String id ,String username , String password)
           if (teacher_register_array.get(id).get(0).equals(username) && teacher_register_array.get(id).get(1).equals(password))
           {
                System.out.print("Logine");
+               
           }
           else 
           {

@@ -12,6 +12,9 @@ class login extends index{
 		String id = input.nextLine();
 		if(stu_register_array.containsKey(id))
 		{
+		//student stu = new student();//This is create for Passwing Student ID 
+		//stu.add_Studnet_detailes(id);
+
 		System.out.print("[+] input Username ====>");
 		String username = input.nextLine();
 		System.out.print("[+] input Password ===>");

@@ -4,10 +4,11 @@ import java.util.HashMap;
 
 class register extends index{
 
+        
 	 void stu_register()
 	 {   
 
-        ArrayList<String> id_values = new ArrayList<String>();
+       
        
         Scanner input = new Scanner(System.in);
 	System.out.println("\n\n=========Welcome to Studnet Register ==========\n\n");
@@ -15,11 +16,11 @@ class register extends index{
         String id_num = input.next();
         System.out.print("[+] Username ===>");
         String  username = input.next();
-        id_values.add(username);
+        stu_id_values.add(username);
         System.out.print("[+] Password ===>");
         String  password = input.next();
-        id_values.add(password);
-        stu_register_array.put(id_num,id_values);
+        stu_id_values.add(password);
+        stu_register_array.put(id_num,stu_id_values);
        
         System.out.print("\n===========================\n");
         System.out.print("[+] Data recorded");
@@ -32,7 +33,7 @@ class register extends index{
   void teacher_register ()
 	 {  
                  
-        ArrayList<String> id_values = new ArrayList<String>();
+       
 
 	Scanner input = new Scanner(System.in);
 	System.out.println("\n\n=========Welcome to Student Register ==========\n\n");
@@ -41,11 +42,11 @@ class register extends index{
      
         System.out.print("[+] Username ===>");
         String username = input.next();
-        id_values.add(username);
+        teacher_id_values.add(username);
         System.out.print("[+] Password ===>");
         String password = input.next();
-        id_values.add(password);
-        teacher_register_array.put(id_num,id_values);
+        teacher_id_values.add(password);
+        teacher_register_array.put(id_num,teacher_id_values);
         System.out.print("\n===========================\n");
         System.out.print("[+] Data recorded");
         index index = new index();
