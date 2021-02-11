@@ -6,20 +6,22 @@ class register extends index{
 	 void stu_register()
 	 {   
 
-        ArrayList<String> values = new ArrayList<String>();
-           
-	Scanner input = new Scanner(System.in);
+        ArrayList<String> id = new ArrayList<String>();
+       
+        Scanner input = new Scanner(System.in);
 	System.out.println("\n\n=========Welcome to Studnet Register ==========\n\n");
+        System.out.print("[+] Input Your id number===>");
+        String id_num = input.next();
         System.out.print("[+] Username ===>");
         String  username = input.next();
-        //this.stu_register_array.put("username",username);
-        values.add(username);
-        this.stu_register_array.put("username",values);
+        id.add(username);
         System.out.print("[+] Password ===>");
         String  password = input.next();
-        //this.stu_register_array.put("password",password);
-        values.add(password);
-        this.stu_register_array.put("password",values);
+        id.add(password);
+        this.stu_register_array.put(id_num,id);
+       
+       
+       
         System.out.print("\n===========================\n");
         System.out.print("[+] Data recorded");
         System.out.print("\n"+this.stu_register_array);
