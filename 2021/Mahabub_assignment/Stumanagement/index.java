@@ -4,7 +4,7 @@ import java.util.HashMap;
 class index{
 
 	public static  HashMap<String, ArrayList<String>> stu_register_array = new HashMap<String, ArrayList<String>> ();
-	public static  HashMap teacher_register_array = new HashMap ();
+	public static  HashMap<String,ArrayList<String>> teacher_register_array = new HashMap<String,ArrayList<String>>();
     public static  ArrayList stu_user_id = new ArrayList();
     public static  ArrayList teacher_user_id = new ArrayList();
 	 void do_main()
