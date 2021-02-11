@@ -33,14 +33,14 @@ class login extends index{
 		System.out.println("\n=====Welcome to our Teachers Logine =====\n");
 		Scanner input = new Scanner(System.in);
 		System.out.print("[+] Enter id===>");
-		String id_num = input.nextLine();
-		if(teacher_register_array.containsKey(id_num))
+		String id = input.nextLine();
+		if(teacher_register_array.containsKey(id))
 		{ 
 		System.out.print("[+] input Username ====>");
 		String username = input.nextLine();
 		System.out.print("[+] input Password ===>");
 		String password = input.nextLine();
-        auth.auth_teacher(id_num, username, password);
+        auth.auth_teacher(id, username, password);
 		
 		}
 		else
