@@ -3,6 +3,7 @@ import java.util.*;
 
 class  student extends index 
 {
+
      void add_Studnet_detailes(String id)
      {
          Scanner input = new Scanner(System.in);
@@ -26,7 +27,17 @@ class  student extends index
          stu_id_values.add(brith);
          stu_register_array.put(id,stu_id_values);
          System.out.print(stu_register_array);
+        // studnet_panel(id);
+        index index = new index();
+        index.do_main();
 
 
+
+     }
+
+    static  void  studnet_panel(String id)
+     {
+        System.out.print("\n=====Welcome to Student Panel=======\n") ;
+                 
      }
 }
