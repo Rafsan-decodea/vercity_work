@@ -19,7 +19,9 @@ class auth extends register{
             }
              else
              {
-                  System.out.print("Logine Filed");
+                  System.out.print("\n\n Logine Filed.... Try Again \n\n");
+                  index index = new index();
+                  index.do_main();
           
               }
         } 
@@ -32,12 +34,17 @@ void auth_teacher( String id ,String username , String password)
       
           if (teacher_register_array.get(id).get(0).equals(username) && teacher_register_array.get(id).get(1).equals(password))
           {
-               System.out.print("Logine");
+               System.out.print("\n[+] Success Fully  Logine As Studnet\n");
+               teacher teacher = new teacher();
+               teacher.teacher_add_details(id);
                
           }
           else 
           {
-               System.out.print("not Logine");
+               System.out.print("\n\n Login Failed ... Try Again \n\n");
+               index index = new index();
+               index.do_main();
+          
           }
        
 

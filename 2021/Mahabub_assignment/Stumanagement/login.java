@@ -7,7 +7,7 @@ class login extends index{
 	{
 	 if(stu_register_array.isEmpty())
 	 {
-        System.out.print("\n[!!!!!!!!] You have Empty Student === Go and Register Atlist 1 \n");
+        System.out.print("\n[!!!!!!!!] You have Empty Student  data === Go and Register Atlist 1 \n");
 		index index = new index();
 		index.do_main();
 	 }
@@ -42,7 +42,7 @@ class login extends index{
 	{
 	 if(teacher_register_array.isEmpty())
 	 {
-		System.out.print("[+] You have Empty Student === Go and Register Atlist 1 \n");
+		System.out.print("\n\n[+] You have Empty Teacher Data === Go and Register Atlist 1 \n");
 		index index = new index();
 		index.do_main();
 

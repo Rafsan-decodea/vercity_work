@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.HashMap;
 
 class index{
-
+	
 	public static  HashMap<String, ArrayList<String>> stu_register_array = new HashMap<String, ArrayList<String>> ();
 	public static  HashMap<String,ArrayList<String>> teacher_register_array = new HashMap<String,ArrayList<String>>();
     public static 	ArrayList<String> stu_id_values = new ArrayList<String>();
@@ -10,6 +10,7 @@ class index{
 	 void do_main()
 	 {
 	  try{
+	
 		System.out.print("\n======Welcome To our Studnet management System=========\n");
 		System.out.println("1) Login ");
 		System.out.println("2) Register");

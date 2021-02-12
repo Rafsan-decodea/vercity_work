@@ -19,10 +19,13 @@ class  student extends index
          String email = input.nextLine();
          System.out.print("[+] Birth Day===>");
          String brith = input.nextLine();
-         
-
-        
-         
+         stu_id_values.add(name);
+         stu_id_values.add(father_name);
+         stu_id_values.add(mother_name);
+         stu_id_values.add(email);
+         stu_id_values.add(brith);
+         stu_register_array.put(id,stu_id_values);
+         System.out.print(stu_register_array);
 
 
      }
