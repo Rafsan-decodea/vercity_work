@@ -5,6 +5,13 @@ class login extends index{
     
 	void stu_login()
 	{
+	 if(stu_register_array.isEmpty())
+	 {
+        System.out.print("\n[!!!!!!!!] You have Empty Student === Go and Register Atlist 1 \n");
+		index index = new index();
+		index.do_main();
+	 }
+	 else{
 		auth auth = new auth();
 		System.out.println("\n====Welcome to Student Logine========\n");
         Scanner input = new Scanner(System.in);
@@ -27,11 +34,21 @@ class login extends index{
 			index index = new index();
 			index.do_main();
 		}
+	 }	
         
 	}
 
 	void teacher_login()
 	{
+	 if(teacher_register_array.isEmpty())
+	 {
+		System.out.print("[+] You have Empty Student === Go and Register Atlist 1 \n");
+		index index = new index();
+		index.do_main();
+
+	 }
+	 else
+	 {
 		auth auth = new auth();
 		System.out.println("\n=====Welcome to our Teachers Logine =====\n");
 		Scanner input = new Scanner(System.in);
@@ -55,7 +72,7 @@ class login extends index{
  
 
 	}
-
+}
 
 
 }

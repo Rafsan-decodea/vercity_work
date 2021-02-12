@@ -9,6 +9,7 @@ class index{
     public static 	ArrayList<String> teacher_id_values = new ArrayList<String>();
 	 void do_main()
 	 {
+	  try{
 		System.out.print("\n======Welcome To our Studnet management System=========\n");
 		System.out.println("1) Login ");
 		System.out.println("2) Register");
@@ -16,6 +17,7 @@ class index{
 		System.out.print("[+] Chooise===>");
 		Scanner input  =  new Scanner(System.in);
 		int  chooise = input.nextInt();
+ 
         if(chooise==2)
         {
         	System.out.println("\n========Welcome To register Panel==========\n\n");
@@ -58,7 +60,17 @@ class index{
         		login.teacher_login();
 
         	}
+		
         }
+	}
+	catch(Exception e)
+	{
+		System.out.println("\n[+] Invalide Chooise \n");
+		index index = new index();
+		index.do_main(); 
+
+	}
+		
 	}
 	 
 	public static void main(String[] args) {

@@ -12,7 +12,9 @@ class auth extends register{
         {
              if ( stu_register_array.get(id).get(0).equals(username) && stu_register_array.get(id).get(1).equals(password) )
              {
-                 System.out.print("Logine");
+                 System.out.print("\n[+] Success Fully  Logine As Studnet\n");
+                 student stu = new student();
+                 stu.add_Studnet_detailes(id);
      
             }
              else
