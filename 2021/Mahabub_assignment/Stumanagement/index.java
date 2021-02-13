@@ -7,6 +7,7 @@ class index{
 	public static  HashMap<String,ArrayList<String>> teacher_register_array = new HashMap<String,ArrayList<String>>();
     public static 	ArrayList<String> stu_id_values = new ArrayList<String>();
     public static 	ArrayList<String> teacher_id_values = new ArrayList<String>();
+	
 	 void do_main()
 	 {
 	  try{
@@ -66,7 +67,7 @@ class index{
 	}
 	catch(Exception e)
 	{
-		System.out.println("\n[+] Invalide Chooise \n"+e);
+		System.out.println("\n[+] Invalide Chooise \n");
 		index index = new index();
 		index.do_main(); 
 

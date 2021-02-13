@@ -34,6 +34,7 @@ class register extends index{
        
                  System.out.print("\n===========================\n");
                  System.out.print("[+] Data recorded");
+                
                  index index = new index();
                  index.do_main();
         }
