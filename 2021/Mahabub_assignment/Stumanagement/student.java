@@ -81,7 +81,8 @@ class  student extends index
              if (chooise==1)
              {
                 System.out.print("[+]input Your  New Name ====>");
-                String new_name = input.next();
+                input.nextLine();// For Consume String Buffer in /n Carecter
+                String new_name = input.nextLine();
                 stu_has_next.add(2,new_name);
                 System.out.println("[+]Your Name Changed ");
                 studnet_panel(id);
@@ -90,7 +91,8 @@ class  student extends index
              else if ( chooise==2)
              {
                 System.out.print("[+] input you New father Name ===>");
-                String new_father_name = input.next();
+                input.nextLine();// For Consume String Buffer in /n Carecter
+                String new_father_name = input.nextLine();
                 stu_has_next.add(3,new_father_name);
                 System.out.println("[+]Your Father Name Changed ");
                 studnet_panel(id);
@@ -98,6 +100,7 @@ class  student extends index
              else if(chooise==3)
              {
                System.out.print("[+] input you New Mother  Name ===>");
+               input.nextLine();// For Consume String Buffer in /n Carecter
                String new_mother_name = input.nextLine();
                stu_has_next.add(4,new_mother_name);
                System.out.println("[+]Your Mother name is changed");
@@ -108,6 +111,7 @@ class  student extends index
              else if(chooise==4)
              {
                System.out.print("[+] input you New mail ===>");
+               input.nextLine();// For Consume String Buffer in /n Carecter
                String new_mail = input.nextLine();
                stu_has_next.add(5,new_mail);
                System.out.println("[+]Your Mail is Changed ");
@@ -116,6 +120,7 @@ class  student extends index
             else if(chooise==5)
             {
                System.out.print("[+] input you New Birthday ===>");
+               input.nextLine();// For Consume String Buffer in /n Carecter
                String new_birth_day = input.nextLine();
                stu_has_next.add(6,new_birth_day);
                System.out.println("[+]You Birthday is Changed");
