@@ -39,6 +39,7 @@ class  student extends index
         System.out.println("\n=====Welcome to Student Panel=======\n") ;
         System.out.println("1) See Your  Details");
         System.out.println("2) Update Your Details ");
+        System.out.println("3) Log Out ");
         System.out.println("===========================================");
         System.out.print("[+] input Your Choosie ===>");
         Scanner input = new Scanner(System.in);
@@ -126,7 +127,7 @@ class  student extends index
                System.out.println("[+]You Birthday is Changed");
                studnet_panel(id);
             }
-
+            
 
            }
            catch(Exception e)
@@ -140,10 +141,18 @@ class  student extends index
          }
  
       }// This is end Class of Edit 
+
           edit edit = new edit();
           edit.edit();
 
         }
+        else if(chooise==3)
+        {
+             System.out.print("\n[-] Loging Out .......\n");
+             index index = new index();
+             index.do_main();
+        }
+
     }
       catch(Exception e )
       {
