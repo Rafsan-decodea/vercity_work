@@ -5,8 +5,8 @@ class index{
 	
 	public static  HashMap<String, ArrayList<String>> stu_register_array = new HashMap<String, ArrayList<String>> ();
 	public static  HashMap<String,ArrayList<String>> teacher_register_array = new HashMap<String,ArrayList<String>>();
-    public static 	ArrayList<String> stu_id_values = new ArrayList<String>();
-    public static 	ArrayList<String> teacher_id_values = new ArrayList<String>();
+    public  	ArrayList<String> stu_id_values = new ArrayList<String>();
+    public  	ArrayList<String> teacher_id_values = new ArrayList<String>();
 	
 	 void do_main()
 	 {
@@ -40,7 +40,11 @@ class index{
             	reg.teacher_register();
 
             }
-
+		else{
+			  index index = new index();
+			  index.do_main();
+		}
+        
         }
         else if(chooise==1)
         {
@@ -62,8 +66,20 @@ class index{
         		login.teacher_login();
 
         	}
+			else 
+			{
+				index index = new index();
+			    index.do_main();
+			}
+
 		
         }
+
+		else
+		{
+			index index = new index();
+			  index.do_main();
+		}
 	}
 	catch(Exception e)
 	{

@@ -5,6 +5,7 @@ class  teacher extends index
    
     void teacher_add_details(String id)
     {
+        ArrayList<String> teacher_add_details =  teacher_register_array.get(id);
         Scanner input = new Scanner(System.in);
         System.out.println("========================================");
         System.out.println("\n[+] You Logine id is ===>"+id);
@@ -19,13 +20,13 @@ class  teacher extends index
         String email = input.nextLine();
         System.out.print("[+] Birth Day===>");
         String brith = input.nextLine();
-        teacher_id_values.add(name);
-        teacher_id_values.add(father_name);
-        teacher_id_values.add(mother_name);
-        teacher_id_values.add(email);
-        teacher_id_values.add(brith);
-        teacher_register_array.put(id,teacher_id_values);
-        System.out.print(teacher_register_array);
+        teacher_add_details.add(2,name);
+        teacher_add_details.add(3,father_name);
+        teacher_add_details.add(4,mother_name);
+        teacher_add_details.add(5,email);
+        teacher_add_details.add(6,brith);
+        teacher_register_array.put(id,teacher_add_details);
+      
         teacher_panal(id);
     
 
@@ -46,10 +47,44 @@ class  teacher extends index
         int chooise = input.nextInt();
         try
         {
-            if(chooise==1)
+          if(chooise==1)
             {
+                class stu_check{
+                    
+                    void stu_check(){
+                        System.out.println("\n=====See Studnet Details =======\n");
+                        System.out.print("[+] Enter a Studnet id =====>");
+                        input.nextLine();
+                        String stu_id = input.nextLine();
+                        if(stu_register_array.containsKey(stu_id))
+                             {
+            
+                                ArrayList<String> stu_has_next = stu_register_array.get(stu_id);
+                                System.out.println("[+] Your name is ===> "+stu_has_next.get(2));
+                                System.out.println("[+] Your Father Name ===>"+stu_has_next.get(3));
+                                System.out.println("[+] Your Mother Name ===> "+stu_has_next.get(4));
+                                System.out.println("[+] You  Email ====>"+stu_has_next.get(5));
+                                System.out.println("[+] Your Birth Day ===>"+stu_has_next.get(6));
+                                System.out.println("[+] Your Id is ===>"+stu_has_next.get(0));
+                                System.out.print("[+] Your Password is ===>"+stu_has_next.get(1));
+                                teacher_panal(id);
 
-            }
+                              }
+                         else
+                             {
+                                 System.out.print("\n\n [!!!]Student id not Exit \n\n");
+                                 stu_check stu = new stu_check();
+                                 stu.stu_check();
+
+                              }
+             
+                        }
+                  }//Stu_check class End
+                  stu_check stu = new stu_check();//This is for  making a method  to loop stu details
+                  stu.stu_check();
+
+            } 
+
             else if(chooise==2)
             {
 

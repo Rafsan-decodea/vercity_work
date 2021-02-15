@@ -6,27 +6,27 @@ class  student extends index
 
      void add_Studnet_detailes(String id)
      {
+         ArrayList<String> stu_add_details = stu_register_array.get(id); 
          Scanner input = new Scanner(System.in);
          System.out.println("========================================");
          System.out.println("\n[+] You Logine id is ===>"+id);
          System.out.println("================Add Your Details ======");
          System.out.print("[+] Your name===>");
          String name =  input.nextLine();
+         stu_add_details.add(2,name);
          System.out.print("[+] your Father Name===>");
          String father_name = input.nextLine();
+         stu_add_details.add(3,father_name);
          System.out.print("[+] Your Mother Name===>");
          String mother_name = input.nextLine();
+         stu_add_details.add(4,mother_name);
          System.out.print("[+] Your Email===> ");
          String email = input.nextLine();
+         stu_add_details.add(5,email);
          System.out.print("[+] Birth Day===>");
          String brith = input.nextLine();
-         stu_id_values.add(name);
-         stu_id_values.add(father_name);
-         stu_id_values.add(mother_name);
-         stu_id_values.add(email);
-         stu_id_values.add(brith);
-         stu_register_array.put(id,stu_id_values);
-         System.out.print(stu_register_array);
+         stu_add_details.add(6,brith);
+         stu_register_array.put(id,stu_add_details);
          studnet_panel(id);
         
 
@@ -42,13 +42,14 @@ class  student extends index
         System.out.println("3) Log Out ");
         System.out.println("===========================================");
         System.out.print("[+] input Your Choosie ===>");
+     
         Scanner input = new Scanner(System.in);
       try{
         int  chooise = input.nextInt();
         if (chooise==1)
         {
          ArrayList stu_has_next = stu_register_array.get(id); // This is for get id Value From  id Keys Specefic Keys
-          System.out.println("\n ========= Your Details ======");
+         System.out.println("\n ========= Your Details ======");
           System.out.println("[+] Your name is ===> "+stu_has_next.get(2));
           System.out.println("[+] Your Father Name ===>"+stu_has_next.get(3));
           System.out.println("[+] Your Mother Name ===> "+stu_has_next.get(4));
@@ -156,7 +157,7 @@ class  student extends index
     }
       catch(Exception e )
       {
-          System.out.print("\n[!!!!!!] Invalide Chooise in Student Section \n");
+          System.out.print("\n[!!!!!!] Invalide Chooise in Student Section \n"+e);
           studnet_panel(id);
       }
 

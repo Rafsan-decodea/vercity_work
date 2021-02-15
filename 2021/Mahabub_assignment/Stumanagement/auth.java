@@ -18,7 +18,8 @@ class auth extends register{
                 {
                     System.out.print("\n[+] You Are new USer here ... Please input Your Details \n");
                     student stu = new student();
-                    stu.add_Studnet_detailes(id);   
+                    stu.add_Studnet_detailes(id); 
+                    System.out.println(stu_has_next.size());  
                       
                 } 
                
@@ -28,7 +29,7 @@ class auth extends register{
                    
                       student stu = new student();
                       stu.studnet_panel(id);
-                
+                      System.out.println(stu_has_next.size());  
                 }
      
             }

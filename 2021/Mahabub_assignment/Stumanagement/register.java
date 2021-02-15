@@ -3,11 +3,10 @@ import java.util.HashMap;
 
 
 class register extends index{
-
+        
         
 	 void stu_register()
-	 {   
-
+	 {  
        
        
         Scanner input = new Scanner(System.in);
@@ -26,12 +25,11 @@ class register extends index{
         {
                 System.out.print("[+] Username ===>");
                 String  username = input.next();
-                stu_id_values.add(username);
+                stu_id_values.add(0,username);
                 System.out.print("[+] Password ===>");
                 String  password = input.next();
-                stu_id_values.add(password);
+                stu_id_values.add(1,password);
                 stu_register_array.put(id_num,stu_id_values);
-       
                  System.out.print("\n===========================\n");
                  System.out.print("[+] Data recorded");
                 
@@ -47,7 +45,7 @@ class register extends index{
                  
    
 	Scanner input = new Scanner(System.in);
-	System.out.println("\n\n=========Welcome to Student Register ==========\n\n");
+	System.out.println("\n\n=========Welcome to Teacher Register ==========\n\n");
         System.out.print("[+] Input Your id number===>");
         String id_num = input.next();
         if(teacher_register_array.containsKey(id_num))
@@ -61,10 +59,10 @@ class register extends index{
         {
                 System.out.print("[+] Username ===>");
                 String username = input.next();
-                teacher_id_values.add(username);
+                teacher_id_values.add(0,username);
                 System.out.print("[+] Password ===>");
                 String password = input.next();
-                teacher_id_values.add(password);
+                teacher_id_values.add(1,password);
                 teacher_register_array.put(id_num,teacher_id_values);
                 System.out.print("\n===========================\n");
                 System.out.print("[+] Data recorded");
