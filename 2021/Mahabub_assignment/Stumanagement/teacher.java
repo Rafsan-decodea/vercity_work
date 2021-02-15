@@ -49,9 +49,8 @@ class  teacher extends index
         {
           if(chooise==1)
             {
-                class stu_check{
-                    
-                    void stu_check(){
+             
+
                         System.out.println("\n=====See Studnet Details =======\n");
                         System.out.print("[+] Enter a Studnet id =====>");
                         input.nextLine();
@@ -81,16 +80,10 @@ class  teacher extends index
                               }
                          else
                              {
-                                 System.out.print("\n\n [!!!]Student id not Exit \n\n");
-                                 stu_check stu = new stu_check();
-                                 stu.stu_check();
+                                System.out.print("\n\n[+] Student id dose not Exits \n\n"); 
+                                teacher_panal(id);
 
                               }
-             
-                        }
-                  }//Stu_check class End
-                  stu_check stu = new stu_check();//This is for  making a method  to loop stu details
-                  stu.stu_check();
 
             } 
 
@@ -104,14 +97,11 @@ class  teacher extends index
             else if(chooise==3)
             {
                System.out.print("[+] Enter Id number of Student ===>");
-              input.nextInt();
-              String remove_id = input.nextLine();
+              String remove_id = input.next();
               if (stu_register_array.containsKey(remove_id))
               {
-                System.out.println(stu_register_array);
                 stu_register_array.remove(remove_id);
                 System.out.print("\nn[+] Succesfully Remove this Studnet \n\n");
-                System.out.println(stu_register_array);
                 teacher_panal(id);
 
               }
@@ -125,7 +115,16 @@ class  teacher extends index
             }
             else if(chooise==4)
             {
-
+               ArrayList<String>  teacher_details = teacher_register_array.get(id);
+                System.out.println("\n[+] Your name is ===> "+teacher_details.get(2));
+                System.out.println("[+] Your Father Name ===>"+teacher_details.get(3));
+                System.out.println("[+] Your Mother Name ===> "+teacher_details.get(4));
+                System.out.println("[+] You  Email ====>"+teacher_details.get(5));
+                System.out.println("[+] Your Birth Day ===>"+teacher_details.get(6));
+                System.out.println("[+] Your Id is ===>"+teacher_details.get(0));
+                System.out.print("[+] Your Password is ===>"+teacher_details.get(1));
+                System.out.print("\n");
+                teacher_panal(id);
             }
 
             else if(chooise==5)
