@@ -72,5 +72,5 @@ class register extends index{
         }
       
 
-	 }
+   }
 }

@@ -11,7 +11,7 @@ class index{
 	 void do_main()
 	 {
 	  try{
-	
+
 		System.out.print("\n======Welcome To our Studnet management System=========\n");
 		System.out.println("1) Login ");
 		System.out.println("2) Register");
