@@ -60,7 +60,7 @@ class index{
         		login.stu_login();
 
         	}
-			asd
+			
         	else if(chooise2 ==2)
         	{
         		login login = new login();

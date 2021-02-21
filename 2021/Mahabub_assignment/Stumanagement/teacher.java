@@ -129,6 +129,49 @@ class  teacher extends index
 
             else if(chooise==5)
             {
+                ArrayList<String> teacher_details = teacher_register_array.get(id);
+                System.out.println("\n1)Changed Your Name");
+                System.out.println("2)Changed  your Father Name");
+                System.out.println("3)Changed your Mother Name");
+                System.out.println("4)Changed your Email");
+                System.out.println("5)Changed your BirthDay ");
+                System.out.println("6)Changed your Password");
+                System.out.println("=============================");
+                System.out.print("[+]Choose ===>");
+                int chooise2 = input.nextInt();
+                if (chooise2==1)
+                {
+                    System.out.print("\n[+] Input your New name==>");
+                    input.nextLine();
+                    String new_name= input.nextLine();
+                    teacher_details.add(2,new_name);
+                    System.out.println("[+] Your name is update");
+                    teacher_panal(id);
+
+                }
+                else if(chooise2==2)
+                {
+                    System.out.print("\n[+] input your New Father Name==>");
+                    input.nextLine();
+                    String new_father_name = input.nextLine();
+                    teacher_details.add(3,new_father_name);
+                    System.out.println("\n[+] Your Father name is Update");
+                    teacher_panal(id);
+
+                }
+                else if(chooise2==3)
+                {
+                    System.out.print("[+] Input Your new Mother Name====>");
+                    input.nextLine();
+                    String new_mother_name = input.nextLine();
+                    teacher_details.add(4,new_mother_name);
+                    System.out.print("\n[+] Your Mother Name Update ");
+                    teacher_panal(id);
+                }
+                else if(chooise2==4)
+                {
+
+                }
 
             }
             else if(chooise==6)
