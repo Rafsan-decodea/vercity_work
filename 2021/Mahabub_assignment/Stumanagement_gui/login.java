@@ -7,12 +7,13 @@ class login implements ActionListener {
 
 
 
-    
+
     public static  JLabel Banner_label,id_label,username_label,password_label;
     public static  JTextField id_filed ,user_field,password_field;
     public static JFrame jframe2 = new JFrame();
     public static JPanel jpanel2 = new JPanel();
     public static JRadioButton stu_login_jbutton,teacher_login_button;
+    public static JButton login;
       void login()
       {
         
@@ -32,7 +33,7 @@ class login implements ActionListener {
        
         
         Banner_label = new JLabel();
-        Banner_label.setText("<html><h3 style='color:green;background-color:#a2beeb;'>==Welcome Studnet Login Panel==</h3></html>");
+        Banner_label.setText("<html><h3 style='color:green;background-color:#a2beeb;'>==Welcome  Login Panel==</h3></html>");
         Banner_label.setBounds(20, 0, 400, 20);
         jpanel2.add(Banner_label);
 
@@ -66,6 +67,10 @@ class login implements ActionListener {
         password_field.setBounds(150, 120, 100, 20);
         jpanel2.add(password_field);
 
+        login = new JButton("<html><p style='color:green;'>Login</p></html>");//login Button
+        login.setBounds(150,150,100,20);
+        jpanel2.add(login);
+
 
 
         
@@ -85,10 +90,37 @@ class login implements ActionListener {
                 teacher_login_button.setSelected(false);// if Select Stu Radio Button ... Teacher is unselected
                 System.out.println("You Select Studnet");
             }
-            else if(teacher_login_button.isSelected())
+            if(teacher_login_button.isSelected())
             {
                 stu_login_jbutton.setSelected(false);
                 System.out.println("You  Select teacher");
+            }
+
+
+
+            if(evt.getSource()==login)
+            {
+                if(stu_login_jbutton.isSelected())
+                {
+                    class stu_login_controller extends data_segment
+                    {
+                       void run()
+                       { 
+                        if(stu_register_array.get(id_filed.getText()).get(0).equals(user_field.getText()) && stu_register_array.get(id_filed.getText()).get(1).equals(password_field.getText()))
+                        {
+                            System.out.println("login");
+                        }
+                        else
+                        {
+                            System.out.print("failed");
+                        }
+                    }
+                    }
+
+
+                    stu_login_controller sl= new  stu_login_controller();
+                    sl.run();
+                }
             }
       }
 

@@ -1,12 +1,16 @@
 import java.awt.*;
 import java.awt.event.*;
-
+import java.util.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
 class data_segment
 {
-    
+    public static  HashMap<String, ArrayList<String>> stu_register_array = new HashMap<String, ArrayList<String>> ();
+	public static  HashMap<String,ArrayList<String>> teacher_register_array = new HashMap<String,ArrayList<String>>();
+    public  	ArrayList<String> stu_id_values = new ArrayList<String>();
+    public  	ArrayList<String> teacher_id_values = new ArrayList<String>();
+
 }
 
 

@@ -10,6 +10,7 @@ class register implements ActionListener
     public static JFrame jframe3 = new JFrame();
     public static JPanel jpanel3 = new JPanel();
     public static JRadioButton stu_register_jbutton,teacher_register_button;
+    public static JButton register;
     void register()
     {
         jframe3.setSize(400,300);//width , higth
@@ -18,7 +19,7 @@ class register implements ActionListener
         jpanel3.setLayout(null);
         
         Banner_label = new JLabel();//banner Label
-        Banner_label.setText("<html><h3 style='color:green;background-color:#a2beeb;'>==Welcome Studnet Register Panel==</h3></html>");
+        Banner_label.setText("<html><h3 style='color:green;background-color:#a2beeb;'>==Welcome Register Panel==</h3></html>");
         Banner_label.setBounds(50, 0, 400, 20);
         jpanel3.add(Banner_label);
 
@@ -64,7 +65,10 @@ class register implements ActionListener
         password_field = new JPasswordField();//password 
         password_field.setBounds(150, 120, 100, 20);
         jpanel3.add(password_field);
-
+      
+        register = new JButton("<html><p style='color:green;'>register</p></html>");//Register Button
+        register.setBounds(150,150,100,20);
+        jpanel3.add(register);
 
 
 
@@ -74,23 +78,79 @@ class register implements ActionListener
         // jpanel.add(user_input);
         stu_register_jbutton.addActionListener(this);// just set Action What Will be Happed After Select
         teacher_register_button.addActionListener(this);
+        register.addActionListener(this);
 
         jframe3.setVisible(true);
 
     }
 
-    public void actionPerformed(ActionEvent evt)
+    public void actionPerformed(ActionEvent evt)//action
     {
-          if(stu_register_jbutton.isSelected())
+      if(stu_register_jbutton.isSelected())
           {
               teacher_register_button.setSelected(false);// if Select Stu Radio Button ... Teacher is unselected
-              System.out.println("You Select Studnet");
+             System.out.println("You Select Studnet");
           }
-          else if(teacher_register_button.isSelected())
+      if(teacher_register_button.isSelected())
           {
               stu_register_jbutton.setSelected(false);
               System.out.println("You  Select teacher");
           }
+
+
+        if( evt.getSource()==register)
+           {
+         
+               if(stu_register_jbutton.isSelected())
+                    {
+            
+                         class student_register_controller extends data_segment // This  class Create for Sturegister Data Handel
+                           {
+                           void run()
+                           {
+                                  System.out.print("Studnet register is Trigger");
+                                  String id = id_filed.getText();
+                                  String username = user_field.getText();
+                                  String password=  password_field.getText();
+                                  stu_id_values.add(0,username);
+                                  stu_id_values.add(1,password);
+                                  stu_register_array.put(id,stu_id_values);
+                                  System.out.print(stu_register_array);
+
+                            }
+                          }
+
+                         student_register_controller s = new student_register_controller();
+                          s.run();
+           
+                     }
+                 else if(teacher_register_button.isSelected())
+                  {
+                     class teacher_register_object extends data_segment
+                      {
+                        void run()
+                        {
+                            teacher_id_values.add(0,user_field.getText());
+                            teacher_id_values.add(1,password_field.getText());
+                            teacher_register_array.put(id_filed.getText(),teacher_id_values);
+                            System.out.print(teacher_register_array);
+   
+   
+                        }
+                       
+                    }
+
+                    
+                 teacher_register_object t = new teacher_register_object();
+                 t.run();
+                  
+                }
+               
+            }
+
+          
+
+          
     }
 
   
