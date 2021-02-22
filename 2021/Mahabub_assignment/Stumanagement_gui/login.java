@@ -1,3 +1,4 @@
+import javax.accessibility.Accessible;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;//for Action Listaner
@@ -79,6 +80,7 @@ class login implements ActionListener {
         // jpanel.add(user_input);
         stu_login_jbutton.addActionListener(this);// just set Action What Will be Happed After Select
         teacher_login_button.addActionListener(this);
+        login.addActionListener(this);
 
         jframe2.setVisible(true);
       }
@@ -108,13 +110,26 @@ class login implements ActionListener {
                        { 
                         if(stu_register_array.get(id_filed.getText()).get(0).equals(user_field.getText()) && stu_register_array.get(id_filed.getText()).get(1).equals(password_field.getText()))
                         {
-                            System.out.println("login");
+                       
+                            //   class JOptionPane extends JComponent implements Accessible 
+                            // {
+                                  
+                            //     void run ()
+                            //     {
+                            //         JFrame j = new JFrame();
+                            //         JOptionPane.showMessageDialog(j,"adsd");
+                            //     }
+                            // }     
+
+                            System.out.print("Logine");
+                            
+
                         }
                         else
                         {
                             System.out.print("failed");
                         }
-                    }
+                       }
                     }
 
 
