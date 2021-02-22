@@ -1,12 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;//for Action Listaner
 
 
-class login  {
+class login implements ActionListener {
+
+
+
+    
     public static  JLabel Banner_label,id_label,username_label,password_label;
     public static  JTextField id_filed ,user_field,password_field;
     public static JFrame jframe2 = new JFrame();
     public static JPanel jpanel2 = new JPanel();
+    public static JRadioButton stu_login_jbutton,teacher_login_button;
       void login()
       {
         
@@ -14,6 +20,15 @@ class login  {
         jframe2.setDefaultCloseOperation(jframe2.HIDE_ON_CLOSE);
         jframe2.add(jpanel2);
         jpanel2.setLayout(null);
+
+        stu_login_jbutton = new JRadioButton("As a Student "); // 1st Radio Button
+        stu_login_jbutton.setBounds(50, 30, 400,20);
+        jpanel2.add(stu_login_jbutton);
+        
+        teacher_login_button = new JRadioButton("As a Teacher ");//2nd radio Button
+        teacher_login_button.setBounds(50,60,400,20);
+        jpanel2.add(teacher_login_button);
+         
        
         
         Banner_label = new JLabel();
@@ -57,9 +72,24 @@ class login  {
         // user_input = new JTextField();
         // user_input.setBounds(100,20,165,25);
         // jpanel.add(user_input);
-
+        stu_login_jbutton.addActionListener(this);// just set Action What Will be Happed After Select
+        teacher_login_button.addActionListener(this);
 
         jframe2.setVisible(true);
+      }
+
+      public void actionPerformed(ActionEvent evt)
+      {
+            if(stu_login_jbutton.isSelected())
+            {
+                teacher_login_button.setSelected(false);// if Select Stu Radio Button ... Teacher is unselected
+                System.out.println("You Select Studnet");
+            }
+            else if(teacher_login_button.isSelected())
+            {
+                stu_login_jbutton.setSelected(false);
+                System.out.println("You  Select teacher");
+            }
       }
 
   

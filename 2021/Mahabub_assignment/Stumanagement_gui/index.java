@@ -4,6 +4,13 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+class data_segment
+{
+    
+}
+
+
+
 
 class main_gui {
     
