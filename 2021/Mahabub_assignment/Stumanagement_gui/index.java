@@ -18,7 +18,7 @@ class main_gui {
     {
         
         
-        jframe.setSize(300,150);
+        jframe.setSize(300,200);
         jframe.setDefaultCloseOperation(jframe.HIDE_ON_CLOSE);
         jframe.add(jpanel);
         jpanel.setLayout(null);
@@ -37,19 +37,19 @@ class frist_panel  extends main_gui  implements ActionListener  {
         
      
         Banner_label = new JLabel();
-        Banner_label.setText("<html><p style='color:green;background-color:#a2beeb;'>==Welcome Studnet Management System==</p></html>");
-        Banner_label.setBounds(10, 0, 300, 20);
+        Banner_label.setText("<html><div style='color:green;background-color:#a2beeb;'><h3 style='color:red;'> Group Lab | 8</h3> <br><pre>==Welcome Studnet Management System== </pre></div></html>");
+        Banner_label.setBounds(10, 0, 500, 100);
         jpanel.add(Banner_label);
     
         String login_str = String.format("<html><p style='color:red;'>logine</p></html>");
         login = new JButton(login_str);
-        login.setBounds(10,40,100,50);//hight , Width 
+        login.setBounds(10,100,100,50);//hight , Width 
         jpanel.add(login);
 
 
         String register_str = String.format("<html><p style='color:green;'>register</p></html>");
         register= new JButton(register_str);
-        register.setBounds(150,40,100,50);
+        register.setBounds(150,100,100,50);
         jpanel.add(register);
         
         login.addActionListener(this);
