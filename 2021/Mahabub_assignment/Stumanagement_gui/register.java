@@ -108,6 +108,27 @@ class register implements ActionListener
                            {
                            void run()
                            {
+
+                               if(stu_register_array.containsKey(id_filed.getText()))
+                               {
+
+                                class  error_massage {//Error Message
+                                    JFrame f;  
+                                   void run(){ 
+                                    //String text = "<html><h4 style='color:blue;background-color:#a2beeb;'> this ID===> "+id_filed.getText()+" is register Success </h4></html>"; 
+                                        f=new JFrame(); 
+                                        JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Student Id Already Exist .. Try Again</p></html>");  
+                                    }  
+                                  }
+    
+                                  error_massage o = new error_massage();
+                                  o.run();// success Massage End
+                                   
+
+                               }
+
+
+                               else{
                                   System.out.print("Studnet register is Trigger");
                                   String id = id_filed.getText();
                                   String username = user_field.getText();
@@ -117,15 +138,34 @@ class register implements ActionListener
                                   stu_register_array.put(id,stu_id_values);
                                   System.out.print(stu_register_array);
 
-                                  
+                                  class  Success_massage {//success Message
+                                    JFrame f;  
+                                   void run(){ 
+                                    String text = "<html><h4 style='color:blue;background-color:#a2beeb;'> this ID===> "+id_filed.getText()+" is register Success </h4></html>"; 
+                                        f=new JFrame(); 
+                                        JOptionPane.showMessageDialog(f,text);  
+                                    }  
+                                  }
+    
+                                  Success_massage o = new Success_massage();
+                                  o.run();// success Massage End
+                               }
+
+
 
                             }
+
+
                           }
 
                          student_register_controller s = new student_register_controller();
                           s.run();
            
                      }
+
+
+
+                     
                  else if(teacher_register_button.isSelected())
                   {
                      class teacher_register_object extends data_segment
