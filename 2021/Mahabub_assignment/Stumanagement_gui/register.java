@@ -154,7 +154,7 @@ class register implements ActionListener
                                   stu_id_values.add(0,username);
                                   stu_id_values.add(1,password);
                                   stu_register_array.put(id,stu_id_values);
-                                  System.out.print(stu_register_array);
+                                  System.out.println(stu_register_array);
 
                                   class  Success_massage {//success Message
                                     JFrame f;  
@@ -227,7 +227,7 @@ class register implements ActionListener
                             teacher_id_values.add(0,user_field.getText());
                             teacher_id_values.add(1,password_field.getText());
                             teacher_register_array.put(id_filed.getText(),teacher_id_values);
-                            System.out.print(teacher_register_array);
+                            System.out.println(teacher_register_array);
 
                             class  Success_massage {//success Message
                                 JFrame f;  

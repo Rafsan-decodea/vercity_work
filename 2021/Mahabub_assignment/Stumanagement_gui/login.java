@@ -109,12 +109,18 @@ class login implements ActionListener {
                 {
                     class stu_login_controller extends data_segment
                     {
-                       void run()
-                       { 
+
+                    void run()
+                    { 
+                       
+                    if(stu_register_array.containsKey(id_filed.getText())) //Checking if Student id is Exist
+                    {
+
                         if(stu_register_array.get(id_filed.getText()).get(0).equals(user_field.getText()) && stu_register_array.get(id_filed.getText()).get(1).equals(password_field.getText()))
                         {
                        
-             
+                             // DO Next Step in student_login
+                             System.out.println("Login as Student");
                               
 
                         }
@@ -133,6 +139,24 @@ class login implements ActionListener {
                     
                         }
                     }
+
+                    else
+                    {
+                        class  Error_massage {//Error Message
+                            JFrame f;  
+                           void run(){  
+                                f=new JFrame(); 
+                                JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Student ID Dose not Exist  .. Try Again</p></html>");  
+                            }  
+                          }
+
+                          Error_massage o = new Error_massage();
+                          o.run();//error Massage End
+
+                    }
+                  
+                
+                  }
                     
                 }
 
@@ -148,9 +172,15 @@ class login implements ActionListener {
                        {
                            void run()
                            {
+
+                              if(teacher_register_array.containsKey(id_filed.getText()))
+                              {
+
+
                                if(teacher_register_array.get(id_filed.getText()).get(0).equals(user_field.getText()) && teacher_register_array.get(id_filed.getText()).get(1).equals(password_field.getText()))
                                {
-                                   System.out.print("Login as teacher");
+                                   System.out.println("Login as teacher");
+                                   //Doo What you Want
                                }
                                
                                else
@@ -168,6 +198,26 @@ class login implements ActionListener {
                         
 
                                }
+                            
+                            
+                             }
+
+                             else
+                             {
+                                class  Error_massage {//Error Message
+                                    JFrame f;  
+                                   void run(){  
+                                        f=new JFrame(); 
+                                        JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Teacher ID Dose not Exist  .. Try Again</p></html>");  
+                                    }  
+                                  }
+        
+                                  Error_massage o = new Error_massage();
+                                  o.run();//error Massage End
+                                 
+                             }
+
+
                            }
                        }
 
