@@ -124,7 +124,7 @@ class login implements ActionListener {
                                 JFrame f;  
                                void run(){  
                                     f=new JFrame(); 
-                                    JOptionPane.showMessageDialog(f,"Logine Failed .. Try Again");  
+                                    JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Logine Failed as Student  .. Try Again</p></html>");  
                                 }  
                               }
 
@@ -159,7 +159,7 @@ class login implements ActionListener {
                                     JFrame f;  
                                    void run(){  
                                         f=new JFrame(); 
-                                        JOptionPane.showMessageDialog(f,"Logine Failed .. Try Again");  
+                                        JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Logine Failed as teacher .. Try Again</p></html>");  
                                     }  
                                   }
     

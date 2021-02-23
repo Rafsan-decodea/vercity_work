@@ -117,6 +117,8 @@ class register implements ActionListener
                                   stu_register_array.put(id,stu_id_values);
                                   System.out.print(stu_register_array);
 
+                                  
+
                             }
                           }
 
@@ -130,12 +132,41 @@ class register implements ActionListener
                       {
                         void run()
                         {
+                           if(teacher_register_array.containsKey(id_filed.getText()))
+                           {
+                            class  error_massage {//Error Message
+                                JFrame f;  
+                               void run(){ 
+                                //String text = "<html><h4 style='color:blue;background-color:#a2beeb;'> this ID===> "+id_filed.getText()+" is register Success </h4></html>"; 
+                                    f=new JFrame(); 
+                                    JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Teacher Id Already Exist .. Try Again</p></html>");  
+                                }  
+                              }
+
+                              error_massage o = new error_massage();
+                              o.run();// success Massage End
+                               
+                           }
+                           else{ 
                             teacher_id_values.add(0,user_field.getText());
                             teacher_id_values.add(1,password_field.getText());
                             teacher_register_array.put(id_filed.getText(),teacher_id_values);
                             System.out.print(teacher_register_array);
-   
-   
+
+                            class  Success_massage {//success Message
+                                JFrame f;  
+                               void run(){ 
+                                String text = "<html><h4 style='color:blue;background-color:#a2beeb;'> this ID===> "+id_filed.getText()+" is register Success </h4></html>"; 
+                                    f=new JFrame(); 
+                                    JOptionPane.showMessageDialog(f,text);  
+                                }  
+                              }
+
+                              Success_massage o = new Success_massage();
+                              o.run();// success Massage End
+                           }
+                           
+                          
                         }
                        
                     }
