@@ -127,6 +127,24 @@ class register implements ActionListener
 
                                }
 
+                            else if(id_filed.getText().isBlank() || user_field.getText().isBlank()|| password_field.getText().isBlank())
+                               {
+
+                                class  error_massage {//Error Message
+                                    JFrame f;  
+                                   void run(){ 
+                                    //String text = "<html><h4 style='color:blue;background-color:#a2beeb;'> this ID===> "+id_filed.getText()+" is register Success </h4></html>"; 
+                                        f=new JFrame(); 
+                                        JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Fill up Every input Flied</p></html>");  
+                                    }  
+                                  }
+    
+                                  error_massage o = new error_massage();
+                                  o.run();// success Massage End
+                                            
+
+                               }
+
 
                                else{
                                   System.out.print("Studnet register is Trigger");
@@ -165,7 +183,7 @@ class register implements ActionListener
 
 
 
-                     
+
                  else if(teacher_register_button.isSelected())
                   {
                      class teacher_register_object extends data_segment
@@ -187,6 +205,24 @@ class register implements ActionListener
                               o.run();// success Massage End
                                
                            }
+                           else if(id_filed.getText().isBlank() || user_field.getText().isBlank()|| password_field.getText().isBlank())
+                               {
+
+                                class  error_massage {//Error Message
+                                    JFrame f;  
+                                   void run(){ 
+                                    //String text = "<html><h4 style='color:blue;background-color:#a2beeb;'> this ID===> "+id_filed.getText()+" is register Success </h4></html>"; 
+                                        f=new JFrame(); 
+                                        JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Fill up Every input Flied</p></html>");  
+                                    }  
+                                  }
+    
+                                  error_massage o = new error_massage();
+                                  o.run();// success Massage End
+                                            
+
+                               }
+
                            else{ 
                             teacher_id_values.add(0,user_field.getText());
                             teacher_id_values.add(1,password_field.getText());
