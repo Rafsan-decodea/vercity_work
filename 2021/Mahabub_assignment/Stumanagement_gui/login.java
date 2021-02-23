@@ -1,5 +1,8 @@
 import javax.accessibility.Accessible;
 import javax.swing.*;
+
+
+
 import java.awt.*;
 import java.awt.event.*;//for Action Listaner
 
@@ -111,32 +114,73 @@ class login implements ActionListener {
                         if(stu_register_array.get(id_filed.getText()).get(0).equals(user_field.getText()) && stu_register_array.get(id_filed.getText()).get(1).equals(password_field.getText()))
                         {
                        
-                            //   class JOptionPane extends JComponent implements Accessible 
-                            // {
-                                  
-                            //     void run ()
-                            //     {
-                            //         JFrame j = new JFrame();
-                            //         JOptionPane.showMessageDialog(j,"adsd");
-                            //     }
-                            // }     
-
-                            System.out.print("Logine");
-                            
+             
+                              
 
                         }
                         else
                         {
-                            System.out.print("failed");
+                            class  Error_massage {//Error Message
+                                JFrame f;  
+                               void run(){  
+                                    f=new JFrame(); 
+                                    JOptionPane.showMessageDialog(f,"Logine Failed .. Try Again");  
+                                }  
+                              }
+
+                              Error_massage o = new Error_massage();
+                              o.run();//error Massage End
+                    
                         }
-                       }
                     }
+                    
+                }
 
 
                     stu_login_controller sl= new  stu_login_controller();
                     sl.run();
                 }
+
+               if(teacher_login_button.isSelected())
+               {
+
+                       class teacher_register_controller extends data_segment
+                       {
+                           void run()
+                           {
+                               if(teacher_register_array.get(id_filed.getText()).get(0).equals(user_field.getText()) && teacher_register_array.get(id_filed.getText()).get(1).equals(password_field.getText()))
+                               {
+                                   System.out.print("Login as teacher");
+                               }
+                               
+                               else
+                               {
+                                class  Error_massage {//Error Message
+                                    JFrame f;  
+                                   void run(){  
+                                        f=new JFrame(); 
+                                        JOptionPane.showMessageDialog(f,"Logine Failed .. Try Again");  
+                                    }  
+                                  }
+    
+                                  Error_massage o = new Error_massage();
+                                  o.run();//error Massage End
+                        
+
+                               }
+                           }
+                       }
+
+                       teacher_register_controller tr = new teacher_register_controller();
+                       tr.run();
+                   
+               }
+
             }
+
+
+
+
       }
 
   
