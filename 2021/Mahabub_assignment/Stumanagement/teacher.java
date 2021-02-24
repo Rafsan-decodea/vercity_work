@@ -29,7 +29,7 @@ class  teacher extends index
         teacher_add_details.add(6,phone);
         teacher_add_details.add(7,brith);
         teacher_register_array.put(id,teacher_add_details);
-        
+
       
         teacher_panal(id);
     
@@ -134,7 +134,7 @@ class  teacher extends index
 
             else if(chooise==5)
             {
-                ArrayList<String> teacher_details = teacher_register_array.get(id);
+                 ArrayList<String> teacher_details = teacher_register_array.get(id);
                 System.out.println("\n1)Changed Your Name");
                 System.out.println("2)Changed  your Father Name");
                 System.out.println("3)Changed your Mother Name");
@@ -148,8 +148,8 @@ class  teacher extends index
                 if (chooise2==1)
                 {
                     System.out.print("\n[+] Input your New name==>");
-                    input.nextLine();
-                    String new_name= input.nextLine();
+                    //input.nextLine();
+                    String new_name= input.next();
                     teacher_details.add(2,new_name);
                     System.out.println("[+] Your name is update");
                     teacher_panal(id);
@@ -158,8 +158,8 @@ class  teacher extends index
                 else if(chooise2==2)
                 {
                     System.out.print("\n[+] input your New Father Name==>");
-                    input.nextLine();
-                    String new_father_name = input.nextLine();
+                    //input.nextLine();
+                    String new_father_name = input.next();
                     teacher_details.add(3,new_father_name);
                     System.out.println("\n[+] Your Father name is Update");
                     teacher_panal(id);
@@ -168,8 +168,8 @@ class  teacher extends index
                 else if(chooise2==3)
                 {
                     System.out.print("[+] Input Your new Mother Name====>");
-                    input.nextLine();
-                    String new_mother_name = input.nextLine();
+                   // input.nextLine();
+                    String new_mother_name = input.next();
                     teacher_details.add(4,new_mother_name);
                     System.out.print("\n[+] Your Mother Name Update ");
                     teacher_panal(id);
@@ -177,8 +177,8 @@ class  teacher extends index
                 else if(chooise2==4)
                 {
                     System.out.print("[+] Input Your new Email ====>");
-                    input.nextLine();
-                    String new_email = input.nextLine();
+                   // input.nextLine();
+                    String new_email = input.next();
                     teacher_details.add(5,new_email);
                     System.out.print("\n [+] Your Email Details Successfully Update");
                     teacher_panal(id);
@@ -189,8 +189,8 @@ class  teacher extends index
                 else if(chooise2==5)
                 {
                     System.out.print("[+] input Your New Phone  ===>");
-                    input.nextLine();
-                    String new_phone = input.nextLine();
+                   
+                    String new_phone = input.next();
                     teacher_details.add(6,new_phone);
                     System.out.print("\n [+] Your Phone Number Successfully Update");
                     teacher_panal(id);
@@ -199,8 +199,8 @@ class  teacher extends index
                 else if(chooise2 == 6)
                 {
                     System.out.print("[+] input your new  Birthday ===>");
-                    input.nextLine();
-                    String new_bithday = input.nextLine();
+                    //input.nextLine();
+                    String new_bithday = input.next();
                     teacher_details.add(7,new_bithday);
                     System.out.print("[+] Your Birthday is Success Fully Update");
                     teacher_panal(id);
@@ -209,8 +209,8 @@ class  teacher extends index
                 else if(chooise2==7)
                 {
                     System.out.print("[+] input your new Password ===>");
-                    input.nextLine();
-                    String new_password = input.nextLine();
+                    //input.nextLine();
+                    String new_password = input.next();
                     teacher_details.add(1,new_password);
                     System.out.print("\n [+] Your Password Successs fully Update ");
                     teacher_panal(id);
@@ -228,6 +228,10 @@ class  teacher extends index
                 System.out.print("\n[-] Loging Out .......\n");
                 index index = new index();
                 index.do_main();
+            }
+            else
+            {
+                teacher_panal(id);
             }
 
         }
