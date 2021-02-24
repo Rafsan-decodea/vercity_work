@@ -18,14 +18,18 @@ class  teacher extends index
         String mother_name = input.nextLine();
         System.out.print("[+] Your Email===> ");
         String email = input.nextLine();
+        System.out.print("[+] Phone number ====>");
+        String phone = input.nextLine();
         System.out.print("[+] Birth Day===>");
         String brith = input.nextLine();
         teacher_add_details.add(2,name);
         teacher_add_details.add(3,father_name);
         teacher_add_details.add(4,mother_name);
         teacher_add_details.add(5,email);
-        teacher_add_details.add(6,brith);
+        teacher_add_details.add(6,phone);
+        teacher_add_details.add(7,brith);
         teacher_register_array.put(id,teacher_add_details);
+        
       
         teacher_panal(id);
     
@@ -120,7 +124,8 @@ class  teacher extends index
                 System.out.println("[+] Your Father Name ===>"+teacher_details.get(3));
                 System.out.println("[+] Your Mother Name ===> "+teacher_details.get(4));
                 System.out.println("[+] You  Email ====>"+teacher_details.get(5));
-                System.out.println("[+] Your Birth Day ===>"+teacher_details.get(6));
+                System.out.println("[+] Your Phone number is ===>"+teacher_details.get(6));
+                System.out.println("[+] Your Birth Day ===>"+teacher_details.get(7));
                 System.out.println("[+] Your Id is ===>"+teacher_details.get(0));
                 System.out.print("[+] Your Password is ===>"+teacher_details.get(1));
                 System.out.print("\n");
@@ -134,8 +139,9 @@ class  teacher extends index
                 System.out.println("2)Changed  your Father Name");
                 System.out.println("3)Changed your Mother Name");
                 System.out.println("4)Changed your Email");
-                System.out.println("5)Changed your BirthDay ");
-                System.out.println("6)Changed your Password");
+                System.out.println("5)Change Your Phone ");
+                System.out.println("6)Changed your BirthDay ");
+                System.out.println("7)Changed your Password");
                 System.out.println("=============================");
                 System.out.print("[+]Choose ===>");
                 int chooise2 = input.nextInt();
@@ -170,7 +176,50 @@ class  teacher extends index
                 }
                 else if(chooise2==4)
                 {
+                    System.out.print("[+] Input Your new Email ====>");
+                    input.nextLine();
+                    String new_email = input.nextLine();
+                    teacher_details.add(5,new_email);
+                    System.out.print("\n [+] Your Email Details Successfully Update");
+                    teacher_panal(id);
 
+
+                }
+
+                else if(chooise2==5)
+                {
+                    System.out.print("[+] input Your New Phone  ===>");
+                    input.nextLine();
+                    String new_phone = input.nextLine();
+                    teacher_details.add(6,new_phone);
+                    System.out.print("\n [+] Your Phone Number Successfully Update");
+                    teacher_panal(id);
+                }
+
+                else if(chooise2 == 6)
+                {
+                    System.out.print("[+] input your new  Birthday ===>");
+                    input.nextLine();
+                    String new_bithday = input.nextLine();
+                    teacher_details.add(7,new_bithday);
+                    System.out.print("[+] Your Birthday is Success Fully Update");
+                    teacher_panal(id);
+                }
+
+                else if(chooise2==7)
+                {
+                    System.out.print("[+] input your new Password ===>");
+                    input.nextLine();
+                    String new_password = input.nextLine();
+                    teacher_details.add(1,new_password);
+                    System.out.print("\n [+] Your Password Successs fully Update ");
+                    teacher_panal(id);
+
+                }
+                else
+                {
+                    System.out.println("[!!!] invelide Choose From Teacher Panel");
+                    teacher_panal(id);
                 }
 
             }
