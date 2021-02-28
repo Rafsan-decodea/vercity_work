@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
- 
+import javax.swing.*;
 public class SwingPaint {
  
   JButton clearBtn, blackBtn, blueBtn, greenBtn, redBtn, magentaBtn;
@@ -51,15 +51,15 @@ public class SwingPaint {
  
     clearBtn = new JButton("Clear");
     clearBtn.addActionListener(actionListener);
-    blackBtn = new JButton("Black");
+    blackBtn = new JButton("<html><div style='color:Black;'>Black</div></html>");
     blackBtn.addActionListener(actionListener);
-    blueBtn = new JButton("Blue");
+    blueBtn = new JButton("<html><div style='color:Blue;'>Blue</div></html>");
     blueBtn.addActionListener(actionListener);
-    greenBtn = new JButton("Green");
+    greenBtn = new JButton("<html><div style='color:Green;'>Green</div></html>");
     greenBtn.addActionListener(actionListener);
-    redBtn = new JButton("Red");
+    redBtn = new JButton("<html><div style='color:Red;'>Red</div></html>");
     redBtn.addActionListener(actionListener);
-    magentaBtn = new JButton("Magenta");
+    magentaBtn = new JButton("<html><div style='color:magenta;'>magenta</div></html>");
     magentaBtn.addActionListener(actionListener);
  
     // add to panel
