@@ -3,10 +3,11 @@ import java.util.HashMap;
 
 class index{
 	
+	
 	public static  HashMap<String, ArrayList<String>> stu_register_array = new HashMap<String, ArrayList<String>> ();
 	public static  HashMap<String,ArrayList<String>> teacher_register_array = new HashMap<String,ArrayList<String>>();
-    public  	ArrayList<String> stu_id_values = new ArrayList<String>();
-    public  	ArrayList<String> teacher_id_values = new ArrayList<String>();
+    public    ArrayList<String> stu_id_values = new ArrayList<String>();
+    public    ArrayList<String> teacher_id_values = new ArrayList<String>();
 	
 	 void do_main()
 	 {
@@ -79,7 +80,7 @@ class index{
 
 		else
 		{
-			index index = new index();
+			  index index = new index();
 			  index.do_main();
 		}
 	}

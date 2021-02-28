@@ -38,13 +38,14 @@ class  teacher extends index
 
     static void teacher_panal(String id)
     {
-        System.out.println("\n[+] ===== Welcome to teacher Panel =========\n");
+        System.out.println("\n ===== Welcome to teacher Panel =========\n");
         System.out.println("1) See Student Details ");
-        System.out.println("2) See Total Student Count ");
-        System.out.println("3) Delete Studnet From Entry");
-        System.out.println("4) See Your information");
-        System.out.println("5) Update Your information");
-        System.out.println("6) log out");
+        System.out.println("2) Add A new Student ");
+        System.out.println("3) See Total Student Count ");
+        System.out.println("4) Delete Studnet From Entry");
+        System.out.println("5) See Your information");
+        System.out.println("6) Update Your information");
+        System.out.println("7) log out");
         System.out.println("==================================");
         System.out.print("[+] Choose ===>");
         Scanner input = new Scanner(System.in);
@@ -90,15 +91,57 @@ class  teacher extends index
                               }
 
             } 
-
+             
             else if(chooise==2)
+            {
+                ArrayList<String> stu_add_details =  new ArrayList<>();
+                System.out.println("============= Add Student Segment ==========\n");
+                System.out.print("[+] Give Student id ====>");
+                String stu_id = input.next();
+                if(stu_register_array.containsKey(stu_id))
+                {
+                    System.out.println("[!!] Student Id Already Exist ");
+                    teacher_panal(id);
+                }
+                else{
+
+                      System.out.print("[+] Give Student username ====> ");
+                      String stu_username = input.next();
+                      stu_add_details.add(0,stu_username);
+                      System.out.print("[+] Give Student Password ===>");
+                      String stu_password = input.next();
+                      stu_add_details.add(1,stu_password);
+                      System.out.print("[+] Student name===>");
+                      String name =  input.next();
+                      stu_add_details.add(2,name);
+                      System.out.print("[+] "+name+"'s  Father Name===>");
+                      String father_name = input.next();
+                      stu_add_details.add(3,father_name);
+                      System.out.print("[+] "+name+"'s  Mother Name===>");
+                      String mother_name = input.next();
+                      stu_add_details.add(4,mother_name);
+                      System.out.print("[+] "+name+"'s  Email Address===>");
+                      String email = input.next();
+                      stu_add_details.add(5,email);
+                      System.out.print("[+] "+name+"'s  birth day ===>");
+                      String brith = input.next();
+                      stu_add_details.add(6,brith);
+                      stu_register_array.put(stu_id,stu_add_details);
+                      System.out.println("[+] Student Successfully Added \n");
+                      System.out.print(stu_register_array);
+                      teacher_panal(id);
+                }
+            }
+
+
+            else if(chooise==3)
             {
                 System.out.print("\n\n[+]You Have in total "+stu_register_array.size()+" in your entry And There Id's Are==> ");
                 System.out.print(stu_register_array.keySet()+"\n\n");
                 teacher_panal(id);
                 
             }
-            else if(chooise==3)
+            else if(chooise==4)
             {
                System.out.print("[+] Enter Id number of Student ===>");
               String remove_id = input.next();
@@ -117,7 +160,7 @@ class  teacher extends index
               }
                
             }
-            else if(chooise==4)
+            else if(chooise==5)
             {
                ArrayList<String>  teacher_details = teacher_register_array.get(id);
                 System.out.println("\n[+] Your name is ===> "+teacher_details.get(2));
@@ -132,7 +175,7 @@ class  teacher extends index
                 teacher_panal(id);
             }
 
-            else if(chooise==5)
+            else if(chooise==6)
             {
                  ArrayList<String> teacher_details = teacher_register_array.get(id);
                 System.out.println("\n1)Changed Your Name");
@@ -223,7 +266,7 @@ class  teacher extends index
                 }
 
             }
-            else if(chooise==6)
+            else if(chooise==7)
             {
                 System.out.print("\n[-] Loging Out .......\n");
                 index index = new index();
