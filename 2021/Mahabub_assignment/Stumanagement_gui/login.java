@@ -14,7 +14,7 @@ class login implements ActionListener {
 
     public static  JLabel Banner_label,id_label,username_label,password_label;
     public static  JTextField id_filed ,user_field,password_field;
-    public static JFrame jframe2 = new JFrame();
+    public static JFrame jframe2 = new JFrame("Login System");
     public static JPanel jpanel2 = new JPanel();
     public static JRadioButton stu_login_jbutton,teacher_login_button;
     public static JButton login;
@@ -121,6 +121,8 @@ class login implements ActionListener {
                        
                              // DO Next Step in student_login
                              System.out.println("Login as Student");
+                             student student = new student();
+                             student.run(id_filed.getText());
                               
 
                         }

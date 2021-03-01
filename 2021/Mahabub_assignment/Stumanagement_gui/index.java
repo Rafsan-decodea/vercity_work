@@ -22,7 +22,7 @@ class main_gui {
     public static  JTextField user_input ;
     public static JPasswordField user_password ;
     public static  JButton login,register;
-    public static JFrame jframe = new JFrame();
+    public static JFrame jframe = new JFrame("Welcome to Student Managment System");
     public static JPanel jpanel = new JPanel();
     
        void gui()
