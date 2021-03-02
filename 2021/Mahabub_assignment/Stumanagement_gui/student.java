@@ -3,10 +3,10 @@ import java.awt.*;
 import java.awt.event.*;//for Action Listaner
 
 
-class  student{
+class  student implements ActionListener{
 
     public static JLabel Banner_label;
-    public static  JButton see_details , update_details;
+    public static  JButton see_details , update_details,log_out;
     public static JFrame jframe4 = new JFrame();
     public static JPanel jpanel4 = new JPanel();
      void run (String id)
@@ -31,11 +31,39 @@ class  student{
         jpanel4.add(update_details);
         
         
-        
-       
-        
-       
+        log_out = new JButton("<html><p style='color:red;'>logOut</p></html>");
+        log_out.setBounds(50,180,200,50);
+        jpanel4.add(log_out);
+
+
+        see_details.addActionListener(this);
+        update_details.addActionListener(this);
+        log_out.addActionListener(this);
+
+
         jframe4.setVisible(true);
         
      }
+
+
+     public void actionPerformed(ActionEvent evt) { //  Button Action Start From Here
+    
+       if(evt.getSource()==see_details)
+       {
+              
+       }
+
+       else if(evt.getSource()==update_details)
+       {
+
+       }
+
+       else if(evt.getSource()==log_out)
+       {
+          jframe4.dispose();
+       }
+          
+
+     
+   }
 }
