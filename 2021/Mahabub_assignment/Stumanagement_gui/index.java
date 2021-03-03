@@ -16,7 +16,7 @@ class data_segment
 
 
 
-class main_gui {
+class main_gui  {
     
     public static  JLabel Banner_label;
     public static  JTextField user_input ;
@@ -24,6 +24,7 @@ class main_gui {
     public static  JButton login,register;
     public static JFrame jframe = new JFrame("Welcome to Student Managment System");
     public static JPanel jpanel = new JPanel();
+
     
        void gui()
     {
@@ -115,11 +116,14 @@ class frist_panel  extends main_gui  implements ActionListener  {
 
 
 
-class index
+class index extends Thread
 {
     
     public static void main(String[] args) {
+ 
         main_gui gui = new main_gui();
         gui.gui();
+
+       
     }
 }

@@ -1,13 +1,13 @@
 import javax.accessibility.Accessible;
 import javax.swing.*;
 
-
+import java.util.*;
 
 import java.awt.*;
 import java.awt.event.*;//for Action Listaner
 
 
-class login implements ActionListener {
+class login extends Thread  implements ActionListener {
 
 
 
@@ -18,9 +18,9 @@ class login implements ActionListener {
     public static JPanel jpanel2 = new JPanel();
     public static JRadioButton stu_login_jbutton,teacher_login_button;
     public static JButton login;
-      void login()
+  void login()
       {
-        
+      
         jframe2.setSize(400,300);
         jframe2.setDefaultCloseOperation(jframe2.HIDE_ON_CLOSE);
         jframe2.add(jpanel2);
@@ -105,6 +105,7 @@ class login implements ActionListener {
 
             if(evt.getSource()==login)
             {
+              
                 if(stu_login_jbutton.isSelected())
                 {
                     class stu_login_controller extends data_segment
@@ -121,8 +122,18 @@ class login implements ActionListener {
                        
                              // DO Next Step in student_login
                              System.out.println("Login as Student");
-                             student student = new student();
-                             student.run(id_filed.getText());
+                            ArrayList<String> stu_details_check = stu_register_array.get(id_filed.getText());
+                         if(2<=stu_details_check.size())
+                         {
+                            input_student input_student = new input_student();
+                            input_student.run();
+                         }
+                         else
+                         {
+                             student  student = new student();
+                             student.run();
+                         }
+                         
                               
 
                         }
@@ -169,6 +180,7 @@ class login implements ActionListener {
 
                if(teacher_login_button.isSelected())
                {
+            
 
                        class teacher_register_controller extends data_segment
                        {

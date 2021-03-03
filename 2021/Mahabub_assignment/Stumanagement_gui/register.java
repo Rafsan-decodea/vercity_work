@@ -3,7 +3,7 @@ import java.awt.event.*;//for Action Listaner
 
 import java.awt.*;
 
-class register implements ActionListener
+class register extends login implements ActionListener
 {
     public static  JLabel Banner_label,id_label,username_label,password_label;
     public static  JTextField id_filed ,user_field,password_field;
@@ -13,6 +13,8 @@ class register implements ActionListener
     public static JButton register;
     void register()
     {
+        jframe2.setVisible(false);
+
         jframe3.setSize(400,300);//width , higth
         jframe3.setDefaultCloseOperation(jframe3.HIDE_ON_CLOSE);
         jframe3.add(jpanel3);
