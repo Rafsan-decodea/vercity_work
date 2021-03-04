@@ -85,7 +85,7 @@ class register extends login implements ActionListener
         jframe3.setVisible(true);
 
     }
-
+    
     public void actionPerformed(ActionEvent evt)//action
     {
       if(stu_register_jbutton.isSelected())

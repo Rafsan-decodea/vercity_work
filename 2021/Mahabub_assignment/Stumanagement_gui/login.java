@@ -87,7 +87,7 @@ class login extends Thread  implements ActionListener {
 
         jframe2.setVisible(true);
       }
-
+      
       public void actionPerformed(ActionEvent evt)
       {
             if(stu_login_jbutton.isSelected())

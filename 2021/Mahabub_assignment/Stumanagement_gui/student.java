@@ -59,22 +59,49 @@ class  student extends register implements ActionListener{
        if(evt.getSource()==see_details)//This is Responsible For Student See
        {
           class student_inforamtion extends data_segment{
-            JFrame new_jframe4 = new JFrame();
+            JFrame new_jframe4 = new JFrame("You Details");
             JPanel new_jpanel4 = new JPanel();
            void run(){ 
              
             student student = new student();
             
-             new_jframe4.setSize(300,400);
+             new_jframe4.setSize(300,200);
              new_jframe4.setDefaultCloseOperation(jframe4.HIDE_ON_CLOSE);
              new_jframe4.add(new_jpanel4);
              new_jpanel4.setLayout(null);
-             String id = "[+] Your id is ====>"+student.id;
              ArrayList<String> all_stu_data = stu_register_array.get(id);
              String name = "[+] Your name is ===>"+all_stu_data.get(2);
              String father_name ="[+] You father Name is===>"+all_stu_data.get(3);
              String mother_name = "[+] You Mother name is ==>"+all_stu_data.get(4);
-             String birth = "[+] You Date of Birth ===>"+all_stu_data.get(5);
+             String age = "[+] You Date of Birth ===>"+all_stu_data.get(5);
+             String birth = "[+] You Birth Daya ====>"+all_stu_data.get(6);
+
+             JLabel name_label = new JLabel(name);
+             name_label.setBounds(20, 30, 500, 50);
+             new_jpanel4.add(name_label);
+
+             JLabel father_label = new JLabel(father_name);
+             father_label.setBounds(20, 50, 500, 50);
+             new_jpanel4.add(father_label);
+
+             JLabel mother_label = new JLabel(mother_name);
+             mother_label.setBounds(20,70, 500, 50);
+             new_jpanel4.add(mother_label);
+
+
+             JLabel age_label = new JLabel(age);
+             age_label.setBounds(20, 90, 500, 50);
+             new_jpanel4.add(age_label);
+
+
+             JLabel birth_label = new JLabel(birth);
+             birth_label.setBounds(20, 110, 500, 50);
+             new_jpanel4.add(birth_label);
+
+
+
+
+
              new_jframe4.setVisible(true);
              
            }
@@ -104,20 +131,21 @@ class  student extends register implements ActionListener{
 
 }
 
-class  input_student 
+class  input_student implements ActionListener
 {
      
 
     public static JLabel Banner_label, Banner_label2,id_label, name_label,father_name_label,mother_name_label,age_label,birthdata_label;
-    public static  JButton see_details , update_details,log_out;
+    public static  JButton   enter;
     public static JTextField name,father_name,mother_name,age,birthday;
     public static JFrame jframe5 = new JFrame("You Frist Login");
     public static JPanel jpanel5 = new JPanel();
+    public String id ;
      void run(String id)
      {
 
-      student student = new student();
-
+      this.id = id;
+      
 
       jframe5.setSize(300,400);
       jframe5.setDefaultCloseOperation(jframe5.DISPOSE_ON_CLOSE);
@@ -190,17 +218,45 @@ class  input_student
         jpanel5.add(birthday);
 
 
+        enter = new JButton("Enter");
+        enter.setBounds(120,190,100,20);
+        jpanel5.add(enter);
 
-        
-
-
-
-        
-
-
-
+        enter.addActionListener(this);
         jframe5.setVisible(true);
  
+
+     }
+
+
+     public void actionPerformed(ActionEvent evt) {
+
+          if(evt.getSource()==enter)
+          {
+               class enter_student extends data_segment
+               {
+                            
+                      void run()
+                      {
+                          ArrayList<String> student_entry = stu_register_array.get(id);
+                          student_entry.add(2,name.getText());
+                          student_entry.add(3,father_name.getText());
+                          student_entry.add(4,mother_name.getText());
+                          student_entry.add(5,age.getText());
+                          student_entry.add(6,birthday.getText());
+                          stu_register_array.put(id,student_entry);
+                          student  student  = new student();
+                          student.run(id);
+
+                      }
+                
+                
+
+               }
+
+               enter_student enter_student = new enter_student();
+               enter_student.run();
+          }
 
      }
 
