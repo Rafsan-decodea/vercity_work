@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;//for Action Listaner
-
+import java.awt.BorderLayout;
 
 class  student extends register implements ActionListener{
 
@@ -10,7 +10,7 @@ class  student extends register implements ActionListener{
     public static  JButton see_details , update_details,log_out;
     public static JFrame jframe4 = new JFrame();
     public static JPanel jpanel4 = new JPanel();
-    public  String id;
+    public   String id;
      void run (String id)
      {
        this.id = id;
@@ -104,27 +104,101 @@ class  student extends register implements ActionListener{
 
 }
 
-class  input_student extends main_gui
+class  input_student 
 {
+     
 
-    public static JLabel Banner_label, Banner_label2,id_label;
+    public static JLabel Banner_label, Banner_label2,id_label, name_label,father_name_label,mother_name_label,age_label,birthdata_label;
     public static  JButton see_details , update_details,log_out;
-    public static JFrame jframe5 = new JFrame();
+    public static JTextField name,father_name,mother_name,age,birthday;
+    public static JFrame jframe5 = new JFrame("You Frist Login");
     public static JPanel jpanel5 = new JPanel();
-     void run()
+     void run(String id)
      {
+
+      student student = new student();
+
+
       jframe5.setSize(300,400);
       jframe5.setDefaultCloseOperation(jframe5.DISPOSE_ON_CLOSE);
       jframe5.add(jpanel5);
       jpanel5.setLayout(null);
+      
 
         Banner_label = new JLabel();
-        Banner_label.setText("<html><p style='color:white; background-color:green;'>=========Login Succes ==============</p></html>");
-        Banner_label.setBounds(5, 0, 500, 50);
-        jframe5.add(Banner_label);
+        Banner_label.setText("<html><p style='color:white; background-color:green;'>===Login Succes (id ==> "+id+") ===</p></html>");
+        Banner_label.setBounds(20, 0, 500, 50);
+        jpanel5.add(Banner_label);
+
         Banner_label2 = new JLabel();
-        Banner_label2.setText("<html><p style='color:white; background-color:green;'>=========Add You Whole Details==============</p></html>");
-        Banner_label2.setBounds(5, 10, 500, 50);
+        Banner_label2.setText("<html><p style='color:white; background-color:black;'>===Add You Whole Details====</p></html>");
+        Banner_label2.setBounds(20, 20 , 500, 50);
+        jpanel5.add(Banner_label2);
+       
+        name_label = new JLabel("<html><h4 style='color:blue;background-color:#a2beeb;'>Name </h4></html>");
+        name_label.setBounds(30,90,100,20);
+        jpanel5.add(name_label);
+
+
+        name = new JTextField();
+        name.setBounds(120,90,100,20);
+        jpanel5.add(name);
+
+
+        father_name_label = new JLabel("<html><h4 style='color:blue;background-color:#a2beeb;'>Father Name </h4></html>");
+        father_name_label.setBounds(30,110,100,20);
+        jpanel5.add(father_name_label);
+
+
+        father_name = new JTextField();
+        father_name.setBounds(120,110,100,20);
+        jpanel5.add(father_name);
+        
+        
+        
+        
+        mother_name_label = new JLabel("<html><h4 style='color:blue;background-color:#a2beeb;'>mother Name </h4></html>");
+        mother_name_label.setBounds(30,130,100,20);
+        jpanel5.add(mother_name_label);
+
+
+        mother_name = new JTextField();
+        mother_name.setBounds(120,130,100,20);
+        jpanel5.add(mother_name);
+
+
+
+       
+        age_label = new JLabel("<html><h4 style='color:blue;background-color:#a2beeb;'>Age</h4></html>");
+        age_label.setBounds(30,150,100,20);
+        jpanel5.add(age_label);
+
+
+        age = new JTextField();
+        age.setBounds(120,150,100,20);
+        jpanel5.add(age);
+
+
+
+        birthdata_label = new JLabel("<html><h4 style='color:blue;background-color:#a2beeb;'>Birthday</h4></html>");
+        birthdata_label.setBounds(30,170,100,20);
+        jpanel5.add(birthdata_label);
+
+
+        birthday = new JTextField();
+        birthday.setBounds(120,170,100,20);
+        jpanel5.add(birthday);
+
+
+
+        
+
+
+
+        
+
+
+
         jframe5.setVisible(true);
  
 

@@ -126,7 +126,7 @@ class login extends Thread  implements ActionListener {
                          if(2<=stu_details_check.size())
                          {
                             input_student input_student = new input_student();
-                            input_student.run();
+                            input_student.run(id_filed.getText());
                          }
                          else
                          {
