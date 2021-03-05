@@ -98,8 +98,11 @@ class frist_panel  extends main_gui  implements ActionListener  {
         //  System.out.print(usr+" "+pass);
      if(evt.getSource()==login)
      {
+        
+        
          login login = new login();
          login.login();
+       
      }
      if(evt.getSource()==register)
      {

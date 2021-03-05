@@ -115,7 +115,9 @@ class  student extends register implements ActionListener{
 
        else if(evt.getSource()==update_details)
        {
-
+         
+          input_student input_student = new input_student();
+          input_student.run(id, "Update_Panel","Update");
        }
 
       //  else if(evt.getSource()==log_out)
@@ -138,12 +140,13 @@ class  input_student implements ActionListener
     public static JLabel Banner_label, Banner_label2,id_label, name_label,father_name_label,mother_name_label,age_label,birthdata_label;
     public static  JButton   enter;
     public static JTextField name,father_name,mother_name,age,birthday;
-    public static JFrame jframe5 = new JFrame("You Frist Login");
+   
     public static JPanel jpanel5 = new JPanel();
     public String id ;
-     void run(String id)
+     void run(String id,String Rename,String Button_name)
      {
-
+      
+      JFrame jframe5 = new JFrame(Rename);
       this.id = id;
       
 
@@ -218,7 +221,7 @@ class  input_student implements ActionListener
         jpanel5.add(birthday);
 
 
-        enter = new JButton("Enter");
+        enter = new JButton(Button_name);
         enter.setBounds(120,190,100,20);
         jpanel5.add(enter);
 

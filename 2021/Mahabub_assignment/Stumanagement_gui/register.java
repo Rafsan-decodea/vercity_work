@@ -3,6 +3,8 @@ import java.awt.event.*;//for Action Listaner
 
 import java.awt.*;
 
+
+
 class register extends login implements ActionListener
 {
     public static  JLabel Banner_label,id_label,username_label,password_label;

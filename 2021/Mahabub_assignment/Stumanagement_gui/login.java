@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;//for Action Listaner
 
 
-class login extends Thread  implements ActionListener {
+class login extends Thread   implements ActionListener {
 
 
 
@@ -18,7 +18,8 @@ class login extends Thread  implements ActionListener {
     public static JPanel jpanel2 = new JPanel();
     public static JRadioButton stu_login_jbutton,teacher_login_button;
     public static JButton login;
-  void login()
+  
+    void login()
       {
       
         jframe2.setSize(400,300);
@@ -126,7 +127,7 @@ class login extends Thread  implements ActionListener {
                          if(2<=stu_details_check.size())
                          {
                             input_student input_student = new input_student();
-                            input_student.run(id_filed.getText());
+                            input_student.run(id_filed.getText(),"in Frist Login","Enter");
                          }
                          else
                          {
