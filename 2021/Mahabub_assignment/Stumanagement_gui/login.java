@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;//for Action Listaner
 
 
-class login extends Thread   implements ActionListener {
+class login   implements ActionListener , Runnable{
 
 
 
@@ -19,9 +19,42 @@ class login extends Thread   implements ActionListener {
     public static JRadioButton stu_login_jbutton,teacher_login_button;
     public static JButton login;
   
+  
+    // void login_thread()
+    // {
+    //      t = new Thread(){
+    //         @Override
+    //          public void run()
+    //          {
+    //              login login = new login();
+    //              login.login();
+    //              System.out.println(Thread.currentThread());
+ 
+    //          }
+    //      } ;
+ 
+    //       t.start();
+         
+    }
+
     void login()
       {
-      
+        // WindowListener exitListener = new WindowAdapter(){
+        //     @Override
+        //     public void windowClosing(WindowEvent e)
+        //     {
+        //         System.exit(1);
+        //     }
+        // };
+    //    jframe2.addWindowListener(new WindowAdapter() {
+    //        @Override
+    //        public void windowClosing(WindowEvent e) 
+    //        {
+    //           t.interrupt();
+    //           System.out.println(Thread.currentThread());
+                
+    //        }
+    //    });
         jframe2.setSize(400,300);
         jframe2.setDefaultCloseOperation(jframe2.HIDE_ON_CLOSE);
         jframe2.add(jpanel2);
@@ -82,15 +115,30 @@ class login extends Thread   implements ActionListener {
         // user_input = new JTextField();
         // user_input.setBounds(100,20,165,25);
         // jpanel.add(user_input);
-        stu_login_jbutton.addActionListener(this);// just set Action What Will be Happed After Select
-        teacher_login_button.addActionListener(this);
-        login.addActionListener(this);
+
+        // Thread t = new Thread(new Runnable(){
+        //    @Override
+        //     public void run()
+        //     {
+               
+
+        //     }
+        // }) ;
+
+        //  t.run();
+         stu_login_jbutton.addActionListener(this);// just set Action What Will be Happed After Select
+         teacher_login_button.addActionListener(this);
+         login.addActionListener(this);
+        
 
         jframe2.setVisible(true);
       }
       
       public void actionPerformed(ActionEvent evt)
       {
+          
+
+           
             if(stu_login_jbutton.isSelected())
             {
                 teacher_login_button.setSelected(false);// if Select Stu Radio Button ... Teacher is unselected
@@ -132,7 +180,7 @@ class login extends Thread   implements ActionListener {
                          else
                          {
                              student  student = new student();
-                             student.run();
+                             student.run(id_filed.getText());
                          }
                          
                               
@@ -244,9 +292,12 @@ class login extends Thread   implements ActionListener {
             }
 
 
+        }
+    
 
+    
 
-      }
+      
 
   
 }

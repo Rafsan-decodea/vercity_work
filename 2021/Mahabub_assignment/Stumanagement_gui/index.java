@@ -99,15 +99,39 @@ class frist_panel  extends main_gui  implements ActionListener  {
      if(evt.getSource()==login)
      {
         
-        
+       
+
+        // Thread t = new Thread(new Runnable(){
+        //    @Override
+        //     public void run()
+        //     {
+        //         login login = new login();
+        //         login.login();
+        //         System.out.println(Thread.currentThread());
+
+        //     }
+        // }) ;
+
+        //  t.run();
+
+
          login login = new login();
          login.login();
+         System.out.println(Thread.currentThread());
+        
+
+         
+          
+        
+         
+     
        
      }
      if(evt.getSource()==register)
      {
          register register = new register();
          register.register();
+         System.out.println(Thread.currentThread());
      }
 
     }
@@ -119,13 +143,18 @@ class frist_panel  extends main_gui  implements ActionListener  {
 
 
 
-class index extends Thread
+class index 
 {
     
     public static void main(String[] args) {
- 
+   
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run(){  
         main_gui gui = new main_gui();
         gui.gui();
+      }
+    });
+      
 
        
     }
