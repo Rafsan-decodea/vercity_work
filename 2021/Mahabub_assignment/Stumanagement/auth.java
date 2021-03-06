@@ -12,7 +12,7 @@ class auth extends register{
         if ( stu_register_array.get(id).get(0).equals(username) && stu_register_array.get(id).get(1).equals(password) )
              {
                  System.out.print("\n[+] Success Fully  Logine As Studnet\n");
-                 ArrayList stu_has_next = stu_register_array.get(id);
+                 ArrayList<String> stu_has_next = stu_register_array.get(id);
 
                if(2 >=stu_has_next.size() ) // New USer details input
                 {
@@ -50,9 +50,9 @@ void auth_teacher( String id ,String username , String password)
       
           if (teacher_register_array.get(id).get(0).equals(username) && teacher_register_array.get(id).get(1).equals(password))
           {
-               System.out.print("\n[+] Success Fully  Logine As Studnet\n");
+               System.out.print("\n[+] Success Fully  Logine As teacher\n");
 
-               ArrayList teacher_has_next = teacher_register_array.get(id);
+               ArrayList<String> teacher_has_next = teacher_register_array.get(id);
 
                if(2>=teacher_has_next.size())
                {

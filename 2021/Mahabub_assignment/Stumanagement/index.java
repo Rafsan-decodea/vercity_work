@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.HashMap;
 
+
 class index{
 	
 	
@@ -86,7 +87,7 @@ class index{
 	}
 	catch(Exception e)
 	{
-		System.out.println("\n[+] Invalide Chooise \n");
+		System.out.println("\n[+] Invalide Chooise \n"+e);
 		index index = new index();
 		index.do_main(); 
 

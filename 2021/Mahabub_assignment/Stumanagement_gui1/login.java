@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;//for Action Listaner
 
 
-class login   implements ActionListener , Runnable{
+class login implements ActionListener {
 
 
 
@@ -34,8 +34,7 @@ class login   implements ActionListener , Runnable{
     //      } ;
  
     //       t.start();
-         
-    }
+        
 
     void login()
       {
@@ -132,7 +131,7 @@ class login   implements ActionListener , Runnable{
         
 
         jframe2.setVisible(true);
-      }
+    }
       
       public void actionPerformed(ActionEvent evt)
       {
@@ -295,9 +294,4 @@ class login   implements ActionListener , Runnable{
         }
     
 
-    
-
-      
-
-  
-}
+    }

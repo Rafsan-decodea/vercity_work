@@ -2,7 +2,7 @@ import java.util.*;
 
 class  teacher extends index
 {
-   
+    public static  int choose4;
     void teacher_add_details(String id)
     {
         ArrayList<String> teacher_add_details =  teacher_register_array.get(id);
@@ -42,10 +42,11 @@ class  teacher extends index
         System.out.println("1) See Student Details ");
         System.out.println("2) Add A new Student ");
         System.out.println("3) See Total Student Count ");
-        System.out.println("4) Delete Studnet From Entry");
-        System.out.println("5) See Your information");
-        System.out.println("6) Update Your information");
-        System.out.println("7) log out");
+        System.out.println("4) Update A Student Details");
+        System.out.println("5) Delete Studnet From Entry");
+        System.out.println("6) See Your information");
+        System.out.println("7) Update Your information");
+        System.out.println("8) log out");
         System.out.println("==================================");
         System.out.print("[+] Choose ===>");
         Scanner input = new Scanner(System.in);
@@ -141,7 +142,146 @@ class  teacher extends index
                 teacher_panal(id);
                 
             }
+
             else if(chooise==4)
+            {
+                 System.out.print("\n[+] Enter Student id ===> ");
+                 String stu_id = input.next();
+                
+             
+                 if(stu_register_array.containsKey(stu_id))
+                 {
+                    ArrayList<String> stu_details_add = stu_register_array.get(stu_id);
+
+                    if(2>=stu_details_add.size())
+                    { 
+                        System.out.println("[!] Warning This is like a new Stdent \n") ;
+
+                        System.out.println("========Update Student Panel========");
+                        System.out.println("1) Update  Name");
+                        System.out.println("2) Update  Father Name");
+                        System.out.println("3) Update  Mother Name");
+                        System.out.println("4) Update  Email");
+                        System.out.println("5) Update  Bithday");
+                        System.out.println("6) Update Username");
+                        System.out.println("7) Update  Password");
+                        System.out.println("==========================================");
+                        System.out.println("[+] Choose ===>");
+                         choose4 = input.nextInt();
+
+
+
+                       
+                    }
+                    else{
+                       
+                        System.out.println("========Update Student Panel========");
+                       System.out.println("1) Update "+stu_details_add.get(2)+" Name");
+                       System.out.println("2) Update "+stu_details_add.get(2)+" Father Name");
+                       System.out.println("3) Update "+stu_details_add.get(2)+" Mother Name");
+                       System.out.println("4) Update "+stu_details_add.get(2)+" Email");
+                       System.out.println("5) Update "+stu_details_add.get(2)+" Bithday");
+                       System.out.println("6) Update "+stu_details_add.get(2)+" Username");
+                       System.out.println("7) Update "+stu_details_add.get(2)+" Password");
+                       System.out.println("==========================================");
+                       System.out.println("[+] Choose ===>");
+                       choose4 = input.nextInt();
+
+                       
+
+                    }
+                    
+                    try{
+
+                        if (choose4==1)
+                        {
+                          if(2>=stu_details_add.size())
+                             {
+                                System.out.print("[+]input  New Name ====>");
+                        
+                            }
+                         else{  
+                         System.out.print("[+]input "+stu_details_add.get(2)+"  New Name ====>");
+                          }
+                          
+                           String  new_name = input.next();
+                           stu_details_add.add(2,new_name);
+                           System.out.println("[+]His/her Name Changed ");
+                           teacher_panal(id);
+                        }  
+                        
+                        else if ( choose4==2)
+                        {
+                           System.out.print("[+] input his/her  New father Name ===>");
+                           String new_father_name = input.next();
+                           stu_details_add.add(3,new_father_name);
+                           System.out.println("[+]His/her Father Name Changed ");
+                           teacher_panal(id);
+                        }
+                        else if(choose4==3)
+                        {
+                          System.out.print("[+] input his/her  New Mother  Name ===>");
+                          String new_mother_name = input.next();
+                          stu_details_add.add(4,new_mother_name);
+                          System.out.println("[+]His/her Mother name is changed");
+                          teacher_panal(id);
+           
+                        }
+           
+                        else if(choose4==4)
+                        {
+                          System.out.print("[+] input  his/her  New mail ===>");
+                          String new_mail = input.next();
+                          stu_details_add.add(5,new_mail);
+                          System.out.println("[+]His/her Mail is Changed ");
+                          teacher_panal(id);
+                        }
+                       else if(choose4==5)
+                       {
+                          System.out.print("[+] input  his/her  New Birthday ===>");
+                          String new_birth_day = input.next();
+                          stu_details_add.add(6,new_birth_day);
+                          System.out.println("[+]His/her Birthday is Changed");
+                          teacher_panal(id);
+                       }
+                       
+                       else if(choose4==6)
+                       {
+                           System.out.println("[+] input his/her new Username===>");
+                           String new_user = input.next();
+                           stu_details_add.add(0,new_user);
+                           System.out.println("[+] His/her Username changed");
+                           teacher_panal(id);
+                       }
+
+                       else if(choose4==7)
+                       {
+                        System.out.println("[+] input his/her new password===>");
+                        String new_pass = input.next();
+                        stu_details_add.add(1,new_pass);
+                        System.out.println("[+] His/her password changed");
+                        teacher_panal(id);
+
+                       }
+           
+                      }
+                      catch(Exception e)
+                      {
+           
+                         System.out.println("\n\n [!!!!!!!] Wrong input in Edit Panel \n\n");
+                         teacher_panal(id);
+                         
+                      }
+
+                     
+                 }
+                 else
+                 {
+                       System.out.println("[+]Student Id Not Exist!!!!\n");
+                       teacher_panal(id);
+                 }
+            }
+            else if(chooise==5)
             {
                System.out.print("[+] Enter Id number of Student ===>");
               String remove_id = input.next();
@@ -160,7 +300,7 @@ class  teacher extends index
               }
                
             }
-            else if(chooise==5)
+            else if(chooise==6)
             {
                ArrayList<String>  teacher_details = teacher_register_array.get(id);
                 System.out.println("\n[+] Your name is ===> "+teacher_details.get(2));
@@ -175,7 +315,7 @@ class  teacher extends index
                 teacher_panal(id);
             }
 
-            else if(chooise==6)
+            else if(chooise==7)
             {
                  ArrayList<String> teacher_details = teacher_register_array.get(id);
                 System.out.println("\n1)Changed Your Name");
@@ -266,7 +406,7 @@ class  teacher extends index
                 }
 
             }
-            else if(chooise==7)
+            else if(chooise==8)
             {
                 System.out.print("\n[-] Loging Out .......\n");
                 index index = new index();
@@ -280,7 +420,7 @@ class  teacher extends index
         }
         catch(Exception e)
         {
-            System.out.print("\n[!!!!!!!] invalide input ... Try Again\n\n");
+            System.out.print("\n[!!!!!!!] invalide input ... Try Again\n\n"+e);
             teacher_panal(id);
         }
 
