@@ -7,17 +7,18 @@ import java.awt.*;
 import java.awt.event.*;//for Action Listaner
 
 
-class login implements ActionListener {
+class login extends register implements ActionListener {
 
 
 
 
-    public static  JLabel Banner_label,id_label,username_label,password_label;
-    public static  JTextField id_filed ,user_field,password_field;
-    public static JFrame jframe2 = new JFrame("Login System");
-    public static JPanel jpanel2 = new JPanel();
-    public static JRadioButton stu_login_jbutton,teacher_login_button;
-    public static JButton login;
+    public   JLabel Banner_label,id_label,username_label,password_label;
+    public   JTextField id_filed ,user_field,password_field;
+    public      JFrame jframe2 = new JFrame("Login System");
+    public     JPanel jpanel2 = new JPanel();
+    public  JRadioButton stu_login_jbutton,teacher_login_button;
+    public  JButton login;
+    
   
   
     // void login_thread()
@@ -54,8 +55,9 @@ class login implements ActionListener {
                 
     //        }
     //    });
+       
         jframe2.setSize(400,300);
-        jframe2.setDefaultCloseOperation(jframe2.HIDE_ON_CLOSE);
+        jframe2.setDefaultCloseOperation(jframe2.DISPOSE_ON_CLOSE);
         jframe2.add(jpanel2);
         jpanel2.setLayout(null);
 
@@ -135,9 +137,10 @@ class login implements ActionListener {
       
       public void actionPerformed(ActionEvent evt)
       {
-          
-
-           
+   
+               
+             System.out.print(Thread.currentThread());
+      
             if(stu_login_jbutton.isSelected())
             {
                 teacher_login_button.setSelected(false);// if Select Stu Radio Button ... Teacher is unselected
@@ -170,8 +173,11 @@ class login implements ActionListener {
                        
                              // DO Next Step in student_login
                              System.out.println("Login as Student");
+                             jframe2.dispose();
+                             jframe3.dispose();
                             ArrayList<String> stu_details_check = stu_register_array.get(id_filed.getText());
-                         if(2<=stu_details_check.size())
+                            
+                         if(2>=stu_details_check.size())
                          {
                             input_student input_student = new input_student();
                             input_student.run(id_filed.getText(),"in Frist Login","Enter");
@@ -242,6 +248,8 @@ class login implements ActionListener {
                                if(teacher_register_array.get(id_filed.getText()).get(0).equals(user_field.getText()) && teacher_register_array.get(id_filed.getText()).get(1).equals(password_field.getText()))
                                {
                                    System.out.println("Login as teacher");
+                                   jframe2.dispose();
+                                   jframe3.dispose();
                                    //Doo What you Want
                                }
                                
@@ -288,8 +296,12 @@ class login implements ActionListener {
                    
                }
 
-            }
-
+             }
+    
+                
+          
+          
+       
 
         }
     

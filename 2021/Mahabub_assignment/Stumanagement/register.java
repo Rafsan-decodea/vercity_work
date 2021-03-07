@@ -32,7 +32,7 @@ class register extends index{
                 stu_register_array.put(id_num,stu_id_values);
                  System.out.print("\n===========================\n");
                  System.out.print("[+] Data recorded");
-                System.out.print(stu_register_array);
+                 System.out.print( stu_register_array);
                  index index = new index();
                  index.do_main();
         }

@@ -5,20 +5,20 @@ import java.awt.*;
 
 
 
-class register extends login implements ActionListener
+class register implements ActionListener
 {
-    public static  JLabel Banner_label,id_label,username_label,password_label;
-    public static  JTextField id_filed ,user_field,password_field;
-    public static JFrame jframe3 = new JFrame("Register System");
-    public static JPanel jpanel3 = new JPanel();
-    public static JRadioButton stu_register_jbutton,teacher_register_button;
-    public static JButton register;
+    public  JLabel Banner_label,id_label,username_label,password_label;
+    public  JTextField id_filed ,user_field,password_field;
+    public  JFrame jframe3 = new JFrame("Register System");
+    public  JPanel jpanel3 = new JPanel();
+    public JRadioButton stu_register_jbutton,teacher_register_button;
+    public  JButton register;
     void register()
     {
-        jframe2.setVisible(false);
+
 
         jframe3.setSize(400,300);//width , higth
-        jframe3.setDefaultCloseOperation(jframe3.HIDE_ON_CLOSE);
+        jframe3.setDefaultCloseOperation(jframe3.DISPOSE_ON_CLOSE);
         jframe3.add(jpanel3);
         jpanel3.setLayout(null);
         

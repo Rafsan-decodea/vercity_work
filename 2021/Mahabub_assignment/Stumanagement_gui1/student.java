@@ -4,15 +4,17 @@ import java.awt.*;
 import java.awt.event.*;//for Action Listaner
 import java.awt.BorderLayout;
 
-class  student extends register implements ActionListener{
+class  student extends login implements ActionListener{
 
-    public static JLabel Banner_label,id_label;
-    public static  JButton see_details , update_details,log_out;
-    public static JFrame jframe4 = new JFrame();
-    public static JPanel jpanel4 = new JPanel();
+    public  JLabel Banner_label,id_label;
+    public  JButton see_details , update_details,log_out;
+    public   JFrame jframe4 = new JFrame();
+    public   JPanel jpanel4 = new JPanel();
     public   String id;
      void run (String id)
      {
+       jframe2.dispose();
+       jframe3.dispose();
        this.id = id;
 
         jframe4.setSize(300,400);
@@ -39,14 +41,14 @@ class  student extends register implements ActionListener{
         jpanel4.add(update_details);
         
         
-      //   log_out = new JButton("<html><p style='color:red;'>logOut</p></html>");
-      //   log_out.setBounds(50,180,200,50);
-      //   jpanel4.add(log_out);
+        log_out = new JButton("<html><p style='color:red;'>logOut</p></html>");
+        log_out.setBounds(50,180,200,50);
+        jpanel4.add(log_out);
 
 
         see_details.addActionListener(this);
         update_details.addActionListener(this);
-       // log_out.addActionListener(this);
+        log_out.addActionListener(this);
 
 
         jframe4.setVisible(true);
@@ -120,12 +122,14 @@ class  student extends register implements ActionListener{
           input_student.run(id, "Update_Panel","Update");
        }
 
-      //  else if(evt.getSource()==log_out)
-      //  {
+       else if(evt.getSource()==log_out)
+       {
           
-      //     jframe4.hide();
+          jframe4.dispose();
 
-      //  }
+
+
+       }
           
 
      
@@ -133,20 +137,23 @@ class  student extends register implements ActionListener{
 
 }
 
-class  input_student implements ActionListener
+class  input_student extends login implements ActionListener
 {
      
 
-    public static JLabel Banner_label, Banner_label2,id_label, name_label,father_name_label,mother_name_label,age_label,birthdata_label;
-    public static  JButton   enter;
-    public static JTextField name,father_name,mother_name,age,birthday;
+    public  JLabel Banner_label, Banner_label2,id_label, name_label,father_name_label,mother_name_label,age_label,birthdata_label;
+    public   JButton   enter;
+    public  JTextField name,father_name,mother_name,age,birthday;
    
-    public static JPanel jpanel5 = new JPanel();
+    public  JPanel jpanel5 = new JPanel();
     public String id ;
+    public JFrame jframe5;
      void run(String id,String Rename,String Button_name)
      {
+      jframe2.dispose();
+      jframe3.dispose();
       
-      JFrame jframe5 = new JFrame(Rename);
+      jframe5 = new JFrame(Rename);
       this.id = id;
       
 
@@ -260,6 +267,7 @@ class  input_student implements ActionListener
                enter_student enter_student = new enter_student();
                enter_student.run();
           }
+           jframe5.dispose();
 
      }
 
