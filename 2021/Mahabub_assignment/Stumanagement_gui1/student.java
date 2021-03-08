@@ -117,7 +117,7 @@ class  student extends login implements ActionListener{
 
        else if(evt.getSource()==update_details)
        {
-         
+          jframe4.dispose();
           input_student input_student = new input_student();
           input_student.run(id, "Update_Panel","Update");
        }

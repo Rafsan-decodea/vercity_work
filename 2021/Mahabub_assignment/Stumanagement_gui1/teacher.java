@@ -42,7 +42,7 @@ class  teacher extends register implements ActionListener {
     see_total_student.setBounds(50,170,200,50);
     jpanel5.add(see_total_student);
 
-    see_student = new JButton("<html><p style='color:black;'>See One Specific Student </p></html>");
+    see_student = new JButton("<html><p style='color:black;'>See One Specific Student Details </p></html>");
     see_student.setBounds(50,220,200,50);
     jpanel5.add(see_student);
 
@@ -64,6 +64,8 @@ class  teacher extends register implements ActionListener {
     update_details.addActionListener(this);
     log_out.addActionListener(this);
     see_total_student.addActionListener(this);
+    see_student.addActionListener(this);
+    delete_student.addActionListener(this);
      
     jframe5.setVisible(true);
 
@@ -90,7 +92,7 @@ class  teacher extends register implements ActionListener {
                     new_jframe4.add(new_jpanel4);
                     new_jpanel4.setLayout(null);
 
-                    ArrayList<String>  entry_teacher_details= teacher_register_array.get(id);
+                    ArrayList<String>  entry_teacher_details = teacher_register_array.get(id);
                     String name = "[+] Your name is ===>"+entry_teacher_details.get(2);
                    String father_name ="[+] You father Name is===>"+entry_teacher_details.get(3);
                    String mother_name = "[+] You Mother name is ==>"+entry_teacher_details.get(4);
@@ -140,6 +142,7 @@ class  teacher extends register implements ActionListener {
 
      else if(evt.getSource()==update_details)
       {
+        jframe5.dispose();
         teacher_input teacher_input = new teacher_input();
         teacher_input.run(id,"update_details","update"); 
         System.out.print("update work");
@@ -163,6 +166,7 @@ class  teacher extends register implements ActionListener {
 
     else if( evt.getSource()==see_total_student)
     {
+      System.out.println("tigger total student");
           
          class total_student extends data_segment
          {
@@ -171,16 +175,18 @@ class  teacher extends register implements ActionListener {
               void run()
               {
 
-                new_jframe4.setSize(300,200);
+                new_jframe4.setSize(600,200);
                 new_jframe4.setDefaultCloseOperation(new_jframe4.DISPOSE_ON_CLOSE);
                 new_jframe4.add(new_jpanel4);
                 new_jpanel4.setLayout(null);
 
-                String data = "You Have "+stu_register_array.size()+ "Are Enter and Id's Are "+stu_register_array.keySet();
+                String data = "    You Have  Total     "+stu_register_array.size()+ "  Student    Are Enter and  There id's Id's Are  "+stu_register_array.keySet();
                 
                 JLabel jlabel = new JLabel(data);
-                jlabel.setBounds(0,5,500,50);
+                jlabel.setBounds(30,5,500,50);
                 new_jframe4.add(jlabel);
+
+                new_jframe4.setVisible(true);
               
               }
          }
@@ -190,21 +196,221 @@ class  teacher extends register implements ActionListener {
 
     }
 
-        
-        
+
+
+
+    else if(evt.getSource()==see_student)
+    {
+
+        class  see_student extends data_segment  implements ActionListener 
+          {
+                  public  JFrame new_jframe5 = new JFrame("See Student");
+                  public JPanel new_jpanel5 = new JPanel();
+                  public  JFrame new_jframe6 = new JFrame("See Student");
+                  public JPanel new_jpanel6 = new JPanel();
+                  public  JButton search ;
+                  public JLabel name_label,father_name_label,mother_name_label,age_label,birthdata_label;
+                  public JTextField input_filed;
+
+               void run()
+               {
+                new_jframe5.setSize(300,100);
+                new_jframe5.setDefaultCloseOperation(new_jframe5.DISPOSE_ON_CLOSE);
+                new_jframe5.add(new_jpanel5);
+                new_jpanel5.setLayout(null);
+                
+                 JLabel input_id_text= new JLabel("[+] input id ");
+                 input_id_text.setBounds(30,5,500,50);
+                 new_jpanel5.add(input_id_text);
+
+                 input_filed = new JTextField();
+                 input_filed.setBounds(120,5,100,20);
+                 new_jpanel5.add(input_filed);
+                 
+                  search  = new JButton("Search");
+                 search.setBounds(120,20,100,20);
+                 new_jpanel5.add(search);
+
+                 search.addActionListener(this);
+                 new_jframe5.setVisible(true);
+                       
+
+               }
+               public void actionPerformed(ActionEvent evt)
+               {
+               
+                if(stu_register_array.containsKey(input_filed.getText()))
+                  {
+                      ArrayList<String> all_stu_data = stu_register_array.get(input_filed.getText());
+                      if(2<=all_stu_data.size())
+                      {
+                        String name = "[+] Your name is ===>"+all_stu_data.get(2);
+                        String father_name ="[+] You father Name is===>"+all_stu_data.get(3);
+                        String mother_name = "[+] You Mother name is ==>"+all_stu_data.get(4);
+                        String age = "[+] You Date of Birth ===>"+all_stu_data.get(5);
+                        String birth = "[+] You Birth Daya ====>"+all_stu_data.get(6);
+                        new_jframe6.setSize(400,500);
+                        new_jframe6.setDefaultCloseOperation(new_jframe6.DISPOSE_ON_CLOSE);
+                        new_jframe6.add(new_jpanel6);
+                        new_jpanel6.setLayout(null);
+
+                         name_label = new JLabel(name);
+                         
+                         name_label.setBounds(30,10,500,50);
+                         new_jpanel6.add(name_label);
+
+                         father_name_label = new JLabel(father_name);
+                         father_name_label.setBounds(10,30,500,20);
+                         new_jpanel6.add(father_name_label);
+
+                         mother_name_label = new JLabel(mother_name);
+                         mother_name_label.setBounds(30,60,500,20);
+                         new_jpanel6.add(mother_name_label);
+
+                         age_label = new JLabel(age);
+                         age_label.setBounds(30,90,500,20);
+                         new_jpanel6.add(age_label);
+
+                         birthdata_label = new JLabel(birth);
+                         birthdata_label.setBounds(30,120,500,20);
+                         new_jpanel6.add(birthdata_label);
+                       
+
+                         new_jframe6.setVisible(true);
+                      }
+
+                      else
+                      {
+                        class  error_massage {//Error Message
+                          JFrame f;  
+                         void run(){  
+                              f=new JFrame(); 
+                              JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Id Have no Personal Data</p></html>");  
+                          }  
+                        }
+              
+                       error_massage  logout = new  error_massage();
+                        logout.run();//error Massage End
+                      }
+
+                  }
+                  else
+                  {
+                    class  error_massage {//Error Message
+                      JFrame f;  
+                     void run(){  
+                          f=new JFrame(); 
+                          JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Student id not Found</p></html>");  
+                      }  
+                    }
           
+                   error_massage  logout = new  error_massage();
+                    logout.run();//error Massage End
+                  }
+
+              }
+                         
+          }
+
+             see_student see_student = new see_student();
+             see_student.run();
+
+          }
+
+       else if(evt.getSource()==delete_student)
+  
+       {
+            
+               class delete_stu extends data_segment implements ActionListener
+               {
+                            public  JFrame new_jframe5 = new JFrame("See Student");
+                           public JPanel new_jpanel5 = new JPanel();
+                           public JTextField input_filed;
+                           public JButton delete;
+                      
+                          void run()
+                          {
+                            new_jframe5.setSize(300,100);
+                            new_jframe5.setDefaultCloseOperation(new_jframe5.DISPOSE_ON_CLOSE);
+                            new_jframe5.add(new_jpanel5);
+                            new_jpanel5.setLayout(null);
+
+                            JLabel input_id_text= new JLabel("[+] input id ");
+                            input_id_text.setBounds(30,5,500,50);
+                            new_jpanel5.add(input_id_text);
+
+                            input_filed = new JTextField();
+                            input_filed.setBounds(120,5,100,20);
+                            new_jpanel5.add(input_filed);
+                 
+                             delete = new JButton("Delete");
+                            delete.setBounds(120,20,100,20);
+                             new_jpanel5.add(delete);
+
+                            delete.addActionListener(this);
+                             new_jframe5.setVisible(true);
 
 
-     
-        
 
+
+
+
+
+                               
+                          }
+
+                          public void actionPerformed(ActionEvent evt)
+                          {
+                            if(stu_register_array.containsKey(input_filed.getText()))
+                            {
+                                 stu_register_array.remove(input_filed.getText());
+                                 class  error_massage {//Error Message
+                                  JFrame f;  
+                                 void run(){  
+                                      f=new JFrame(); 
+                                      JOptionPane.showMessageDialog(f,"<html><p style='color:green;'>Student id Removed</p></html>");  
+                                  }  
+                                }
+                      
+                               error_massage  logout = new  error_massage();
+                                logout.run();//error Massage End
+    
+                               
+                              
+                              
+
+                          }
+
+                          else
+                          {
+                            class  error_massage {//Error Message
+                              JFrame f;  
+                             void run(){  
+                                  f=new JFrame(); 
+                                  JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Student id not Found</p></html>");  
+                              }  
+                            }
+                  
+                           error_massage  logout = new  error_massage();
+                            logout.run();//error Massage End
+
+                          }
+                          
+                     
+
+               }
+
+       }
+
+       delete_stu delete_stu = new delete_stu();
+       delete_stu.run(); 
+
+      }
+    
    }
 
-    
-}
 
-
-class teacher_input extends register implements ActionListener
+class teacher_input extends teacher implements ActionListener
 {
   
     public  JLabel Banner_label, Banner_label2,id_label, name_label,father_name_label,mother_name_label,age_label,birthdata_label;
@@ -216,6 +422,7 @@ class teacher_input extends register implements ActionListener
     public JFrame jframe6 ;
     void run(String id, String frame_name , String button_name)
     {
+
          jframe6 = new JFrame(frame_name);
          this.id = id;
          jframe6.setSize(300,400);
@@ -300,9 +507,11 @@ class teacher_input extends register implements ActionListener
 
     public void actionPerformed(ActionEvent evt)
       {
+     
       
          if(evt.getSource()==enter)
          {
+            jframe5.dispose();
             class enter_teacher extends data_segment
             {
                          
@@ -317,18 +526,21 @@ class teacher_input extends register implements ActionListener
                        teacher_register_array.put(id,teacher_entry);
                        teacher teacher = new teacher();
                        teacher.run(id);
+                      
                    }
              
-             
+                  
 
             }
-
+           
             enter_teacher enter_teacher = new enter_teacher();
             enter_teacher.run();
 
          }
+
         jframe6.dispose();
 
       }
 
+ }
 }
