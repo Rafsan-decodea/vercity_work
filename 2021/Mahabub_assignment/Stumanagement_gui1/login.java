@@ -39,22 +39,7 @@ class login extends register implements ActionListener {
 
     void login()
       {
-        // WindowListener exitListener = new WindowAdapter(){
-        //     @Override
-        //     public void windowClosing(WindowEvent e)
-        //     {
-        //         System.exit(1);
-        //     }
-        // };
-    //    jframe2.addWindowListener(new WindowAdapter() {
-    //        @Override
-    //        public void windowClosing(WindowEvent e) 
-    //        {
-    //           t.interrupt();
-    //           System.out.println(Thread.currentThread());
-                
-    //        }
-    //    });
+        
        
         jframe2.setSize(400,300);
         jframe2.setDefaultCloseOperation(jframe2.DISPOSE_ON_CLOSE);
@@ -248,8 +233,22 @@ class login extends register implements ActionListener {
                                if(teacher_register_array.get(id_filed.getText()).get(0).equals(user_field.getText()) && teacher_register_array.get(id_filed.getText()).get(1).equals(password_field.getText()))
                                {
                                    System.out.println("Login as teacher");
-                                   jframe2.dispose();
-                                   jframe3.dispose();
+                                   
+                                   ArrayList<String> check_teacher = teacher_register_array.get(id_filed.getText());
+                                   if(2>=check_teacher.size())
+                                   {
+                                        teacher_input teacher_input = new teacher_input();
+                                        teacher_input.run(id_filed.getText(),"1st Logine teacher","enter");
+                                        jframe2.dispose();
+                                        jframe3.dispose();
+                                   }
+                                   else
+                                   {
+                                    teacher  teacher = new teacher();
+                                    teacher.run(id_filed.getText());
+                                    jframe2.dispose();
+                                    jframe3.dispose();
+                                   }
                                    //Doo What you Want
                                }
                                

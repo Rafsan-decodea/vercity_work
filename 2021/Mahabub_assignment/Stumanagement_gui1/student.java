@@ -18,7 +18,7 @@ class  student extends login implements ActionListener{
        this.id = id;
 
         jframe4.setSize(300,400);
-        jframe4.setDefaultCloseOperation(jframe4.DISPOSE_ON_CLOSE);
+        jframe4.setDefaultCloseOperation(jframe4.DO_NOTHING_ON_CLOSE);
         jframe4.add(jpanel4);
         jpanel4.setLayout(null);
 
@@ -124,7 +124,16 @@ class  student extends login implements ActionListener{
 
        else if(evt.getSource()==log_out)
        {
-          
+         class  logout_massage {//Error Message
+            JFrame f;  
+           void run(){  
+                f=new JFrame(); 
+                JOptionPane.showMessageDialog(f,"<html><p style='color:green;'>Log Out Success</p></html>");  
+            }  
+          }
+
+         logout_massage  logout = new  logout_massage();
+          logout.run();//error Massage End
           jframe4.dispose();
 
 
