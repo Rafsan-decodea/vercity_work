@@ -61,7 +61,8 @@ public class SwingPaint {
     redBtn.addActionListener(actionListener);
     magentaBtn = new JButton("<html><div style='color:magenta;'>magenta</div></html>");
     magentaBtn.addActionListener(actionListener);
- 
+
+    
     // add to panel
     controls.add(greenBtn);
     controls.add(blueBtn);
@@ -77,6 +78,7 @@ public class SwingPaint {
     // can close frame
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     // show the swing paint result
+    //frame.setBackground();
     frame.setVisible(true);
  
     // Now you can try our Swing Paint !!! Enjoy :D

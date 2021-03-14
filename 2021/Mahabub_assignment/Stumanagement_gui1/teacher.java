@@ -66,6 +66,7 @@ class  teacher extends register implements ActionListener {
     see_total_student.addActionListener(this);
     see_student.addActionListener(this);
     delete_student.addActionListener(this);
+    add_new_student.addActionListener(this);
      
     jframe5.setVisible(true);
 
@@ -406,9 +407,20 @@ class  teacher extends register implements ActionListener {
        delete_stu.run(); 
 
       }
+
+
+      else if(evt.getSource()==add_new_student)
+      {
+        input_student input_student = new input_student();
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter Id name ===>");
+        String id_val = input.next();
+        input_student.run(id_val ,"add Student","add");
+      }
     
    }
-
+}
 
 class teacher_input extends teacher implements ActionListener
 {
@@ -514,9 +526,26 @@ class teacher_input extends teacher implements ActionListener
             jframe5.dispose();
             class enter_teacher extends data_segment
             {
-                         
+              
+
                    void run()
                    {
+                     if(name.getText().isBlank() || father_name.getText().isBlank()|| mother_name.getText().isBlank()|| age.getText().isBlank()||birthday.getText().isBlank())
+                     {
+                      class  error_massage {//Error Message
+                        JFrame f;  
+                       void run(){ 
+                        //String text = "<html><h4 style='color:blue;background-color:#a2beeb;'> this ID===> "+id_filed.getText()+" is register Success </h4></html>"; 
+                            f=new JFrame(); 
+                            JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Fill up Every input Flied</p></html>");  
+                        }  
+                      }
+
+                      error_massage o = new error_massage();
+                      o.run();// success Massage End
+                     }
+                     else{
+ 
                        ArrayList<String> teacher_entry = teacher_register_array.get(id);
                        teacher_entry.add(2,name.getText());
                        teacher_entry.add(3,father_name.getText());
@@ -526,6 +555,7 @@ class teacher_input extends teacher implements ActionListener
                        teacher_register_array.put(id,teacher_entry);
                        teacher teacher = new teacher();
                        teacher.run(id);
+                     }
                       
                    }
              
@@ -543,4 +573,3 @@ class teacher_input extends teacher implements ActionListener
       }
 
  }
-}

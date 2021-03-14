@@ -12,6 +12,7 @@ class data_segment
     public  	ArrayList<String> stu_id_values = new ArrayList<String>();
     public  	ArrayList<String> teacher_id_values = new ArrayList<String>();
 
+
 }
 
 
@@ -25,7 +26,7 @@ class main_gui  {
     public static  JButton login,register;
     public static JFrame jframe = new JFrame("Welcome to Student Managment System");
     public static JPanel jpanel = new JPanel();
-
+   
     
        void gui()
     {
@@ -38,6 +39,7 @@ class main_gui  {
         frist_panel user= new frist_panel();
         user.Panel();
         jframe.setVisible(true);
+        
     }
 }
 

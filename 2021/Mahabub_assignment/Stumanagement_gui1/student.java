@@ -257,6 +257,26 @@ class  input_student extends login implements ActionListener
                             
                       void run()
                       {
+
+                        if(name.getText().isBlank() || father_name.getText().isBlank()|| mother_name.getText().isBlank()|| age.getText().isBlank()||birthday.getText().isBlank())
+                        {
+                           class  error_massage extends input_student{//Error Message
+                              JFrame f;  
+                             void run(){ 
+                              //String text = "<html><h4 style='color:blue;background-color:#a2beeb;'> this ID===> "+id_filed.getText()+" is register Success </h4></html>"; 
+                                  f=new JFrame(); 
+                                  JOptionPane.showMessageDialog(f,"<html><p style='color:red;'>Fill up Every input Flied</p></html>");  
+                              }  
+                            }
+      
+                            error_massage o = new error_massage();
+                            o.run();// success Massage End
+                          
+                            
+                        
+                        }
+                        else{
+
                           ArrayList<String> student_entry = stu_register_array.get(id);
                           student_entry.add(2,name.getText());
                           student_entry.add(3,father_name.getText());
@@ -266,6 +286,7 @@ class  input_student extends login implements ActionListener
                           stu_register_array.put(id,student_entry);
                           student  student  = new student();
                           student.run(id);
+                        }
 
                       }
                 
