@@ -2,7 +2,8 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
- 
+import java.io.IOError;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -36,16 +37,24 @@ public class SwingPaint {
  
   public void show() {
     // create main frame
-    JFrame frame = new JFrame("Rafsan Jani Made Swing Paint ");
+
+    JFrame frame = new JFrame("Code By "+System.getProperty("user.name"));
+    JLabel show_name = new JLabel();
+
+    show_name.setText("<html><h1 style='color:blue;background-color:#a2beeb;'>"+System.getProperty("user.name")+"'s White Board  </h1></html>");
+    show_name.setBounds(0,0,500,200);// Show my Name 
+
+
     Container content = frame.getContentPane();
     // set layout on content pane
     content.setLayout(new BorderLayout());
+    
     // create draw area
     drawArea = new  DrawArea();
  
     // add to content pane
     content.add(drawArea, BorderLayout.CENTER);
- 
+   
     // create controls to apply colors and call clear feature
     JPanel controls = new JPanel();
  
@@ -70,7 +79,10 @@ public class SwingPaint {
     controls.add(redBtn);
     controls.add(magentaBtn);
     controls.add(clearBtn);
- 
+
+    JPanel jpanel = new JPanel();
+    jpanel.add(show_name);
+    content.add(jpanel,BorderLayout.NORTH); //Add MY name into Jpanel
     // add to content pane
     content.add(controls, BorderLayout.SOUTH);
  
