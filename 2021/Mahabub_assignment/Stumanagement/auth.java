@@ -20,6 +20,7 @@ class auth extends register{
                     student stu = new student();
                     stu.add_Studnet_detailes(id); 
                     System.out.println(stu_has_next.size());  
+                    
                       
                 } 
                

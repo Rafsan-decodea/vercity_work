@@ -19,19 +19,19 @@ class data_segment
 
 
 class main_gui  {
-    
+
     public static  JLabel Banner_label;
     public static  JTextField user_input ;
     public static JPasswordField user_password ;
     public static  JButton login,register;
     public static JFrame jframe = new JFrame("Welcome to Student Managment System");
     public static JPanel jpanel = new JPanel();
-   
-    
+
+
        void gui()
     {
-        
-        
+
+
         jframe.setSize(300,200);
         jframe.setDefaultCloseOperation(jframe.HIDE_ON_CLOSE);
         jframe.add(jpanel);
@@ -39,26 +39,26 @@ class main_gui  {
         frist_panel user= new frist_panel();
         user.Panel();
         jframe.setVisible(true);
-        
+
     }
 }
 
 
 class frist_panel  extends main_gui  implements ActionListener  {
 
-   
+
 
      void  Panel() {
-        
-     
+
+
         Banner_label = new JLabel();
         Banner_label.setText("<html><div style='color:green;background-color:#a2beeb;'><h3 style='color:red;'> Group Lab | 8</h3> <br><pre>==Welcome Studnet Management System== </pre></div></html>");
         Banner_label.setBounds(10, 0, 500, 100);
         jpanel.add(Banner_label);
-    
+
         String login_str = String.format("<html><p style='color:red;'>logine</p></html>");
         login = new JButton(login_str);
-        login.setBounds(10,100,100,50);//hight , Width 
+        login.setBounds(10,100,100,50);//hight , Width
         jpanel.add(login);
 
 
@@ -66,19 +66,19 @@ class frist_panel  extends main_gui  implements ActionListener  {
         register= new JButton(register_str);
         register.setBounds(150,100,100,50);
         jpanel.add(register);
-        
+
         login.addActionListener(this);
         register.addActionListener(this);
-        
 
 
-      
-        
+
+
+
 
         // user_input = new JTextField();
         // user_input.setBounds(100,20,165,25);
         // jpanel.add(user_input);
-        
+
         // password_label = new JLabel("password");
         // password_label.setBounds(10,50,80,25);
         // jpanel.add(password_label);
@@ -86,7 +86,7 @@ class frist_panel  extends main_gui  implements ActionListener  {
         // user_password = new JPasswordField();
         // user_password.setBounds(100,50,165,25);
         // jpanel.add(user_password);
-        
+
 
         // button = new JButton("login");
         // button.setBounds(10,80,80,25);
@@ -101,8 +101,8 @@ class frist_panel  extends main_gui  implements ActionListener  {
         //  System.out.print(usr+" "+pass);
      if(evt.getSource()==login)
      {
-        
-       
+
+
 
         // Thread t = new Thread(new Runnable(){
         //    @Override
@@ -121,17 +121,19 @@ class frist_panel  extends main_gui  implements ActionListener  {
          login login = new login();
          login.login();
          System.out.println(Thread.currentThread());
-        
 
-         
-          
-        
-         
-     
-       
+
+
+
+
+
+
+
+
      }
      if(evt.getSource()==register)
      {
+
          register register = new register();
          register.register();
          System.out.println(Thread.currentThread());
@@ -146,19 +148,19 @@ class frist_panel  extends main_gui  implements ActionListener  {
 
 
 
-class index 
+class index
 {
-    
+
     public static void main(String[] args) {
-   
+
     SwingUtilities.invokeLater(new Runnable() {
-      public void run(){  
+      public void run(){
         main_gui gui = new main_gui();
         gui.gui();
       }
     });
-      
 
-       
+
+
     }
 }

@@ -94,11 +94,20 @@ class index{
 	}
 		
 	}
+
+	void data()
+	{
+		System.out.print("Hello World");
+	}
 	 
 	public static void main(String[] args) {
 	
 	  index index = new index();
 	  index.do_main();
+
+	  index.data();
+
+
 
  }
 
