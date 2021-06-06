@@ -65,20 +65,25 @@ def start():
       stumother_name = input("[+]studnet Mother name ===>")
       stu_dataofbirth = input("[+]stu date of birth ==>")
       linking  = SLinkedList()
-      linking.headval = Node(stuid)
-      ln_stuname= Node(stuname)
-      ln_stufathername = Node(stufather_name)
-      ln_stumothername = Node(stumother_name)
-      ln_studataofbirth = Node(stu_dataofbirth)
+      m_stuid = "[+] Studnet id ==>{}".format(stuid)
+      linking.headval = Node(m_stuid)
+      m_stuname = "[+] Studnet Name ==>{}".format(stuname)
+      ln_stuname= Node(m_stuname)
+      m_stufather_name = "[+] Student Father Name ===>{}".format(stufather_name)
+      ln_stufathername = Node(m_stufather_name)
+      m_stumother_name = "[+] Student Mother Name ==>{}".format( stumother_name)
+      ln_stumothername = Node(m_stumother_name)
+      m_studateofbith = "[+] Student Date of Birth ===>{}".format(stu_dataofbirth)
+      ln_studataofbirth = Node(m_studateofbith)
       linking.headval.nextval = ln_stuname
       ln_stuname.nextval = ln_stufathername
       ln_stufathername.nextval = ln_stumothername
       ln_stumothername.nextval = ln_studataofbirth
-      print ("\n Data Recoded Success")
-      print ("\n")
+      print ("\n[+]Data Recoded Success\n")
+      print ("*"*10)
       linking.ShowAll_data()
+      print ("\n")
       start()
-
 
 
 
