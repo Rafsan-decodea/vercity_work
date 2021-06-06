@@ -76,7 +76,7 @@ def start():
       m_studateofbith = "[+] Student Date of Birth ===>{}".format(stu_dataofbirth)
       ln_studataofbirth = Node(m_studateofbith)
       linking.headval.nextval = ln_stuname
-      ln_stuname.nextval = ln_stufathername
+      ln_stuname.nextval = ln_stufathername 
       ln_stufathername.nextval = ln_stumothername
       ln_stumothername.nextval = ln_studataofbirth
       print ("\n[+]Data Recoded Success\n")
