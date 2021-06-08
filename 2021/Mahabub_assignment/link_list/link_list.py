@@ -1,9 +1,18 @@
-import ctypes
-
-linklist = ctypes.CDLL("linklist.so")
 
 
-linklist.insert(int(1),str("raan"),int( 2))
-linklist.insert(2,"raan",2)
-linklist.insert(3,"raan",2)
-linklist.display()
+class Node:
+    def __init__(self,value):
+        self.roll = None
+        self.name = None
+        self.cgpa = None
+        self.next = value
+
+class Linklist:
+     def __init__(self):
+         self.head = None
+         
+
+
+
+
+

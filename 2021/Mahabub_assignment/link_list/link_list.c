@@ -11,32 +11,30 @@ struct linked_list
 };
 
 typedef struct linked_list node;
-node* list = NULL;
+node* head = NULL;
 node* tptr = NULL;
 node* nptr = NULL;
 node* tempnode = NULL;
 
-void insert(int Roll , char Name[30], double Cgpa)
+void insert(int Roll, char Name[20], double Cgpa)
 {
-  
 
-    //nptr = new(node);
     nptr = (node *)malloc (sizeof(node));
     nptr->roll = Roll;
-    strcpy(nptr->name,Name);
+    strcpy(nptr->name,Name);// This is for  Str Copy for  to the List
     nptr->cgpa = Cgpa;
     nptr->next = NULL;
 
-    tptr = list;
+    tptr = head;
 
-    if(list == NULL)
+    if(head == NULL)
     {
-        list = nptr;
+        head= nptr;
         return;
     }
     if(Roll < tptr->roll)
     {
-        list = nptr;
+        head = nptr;
         nptr->next = tptr;
         return;
     }
@@ -60,15 +58,15 @@ void insert(int Roll , char Name[30], double Cgpa)
 
 void search(int roll_no)
 {
-    
-  
 
-    tptr = list;
+
+
+    tptr =  head;
     while(tptr->roll != roll_no)
     {
         if(tptr->next == NULL)
         {
-            printf("Roll no %d is not found!!!\n\n",roll_no);
+            printf("[OPPS➭➭➭➭➭➭] Roll no %d is not found!!!\n\n",roll_no);
             break;
         }
         tptr = tptr->next;
@@ -76,19 +74,19 @@ void search(int roll_no)
 
     if(tptr->roll == roll_no)
     {
-        printf("Roll Number : %d\n",tptr->roll);
-        printf("Name : %s\n",tptr->name);
-        printf("Cgpa : %.2lf\n\n",tptr->cgpa);
+        printf("[▶]Roll Number <===> %d\n",tptr->roll);
+        printf("[▶]Name <===> %s\n",tptr->name);
+        printf("[▶]CGPA <===> %.2lf\n\n",tptr->cgpa);
     }
 }
 
 void deleting(int roll_no)
 {
-    
-   
 
-    tptr = list;
-    if(list == NULL)
+
+
+    tptr = head;
+    if(head == NULL)
     {
         printf("Rcord with roll number %d is not found\n\n",roll_no);
         return;
@@ -96,7 +94,7 @@ void deleting(int roll_no)
 
     if(roll_no == tptr->roll)
     {
-        list = tptr->next;
+        head = tptr->next;
         //delete(tptr);
         free(tptr);
         printf("Rcord with roll number %d is found\n",roll_no);
@@ -123,8 +121,8 @@ void deleting(int roll_no)
             tempnode->next = tptr->next;
         }
 
-        printf("Rcord with roll number %d is found\n",roll_no);
-        printf("Rcord successfully deleted\n\n");
+        printf("[✪✪✪]  %d is found\n",roll_no);
+        printf("[X] Successfully deleted :) \n\n");
         //delete(tptr);
         free(tptr);
     }
@@ -132,46 +130,52 @@ void deleting(int roll_no)
 
 void update(char Name[30],double Cgpa, int roll_no)
 {
-  
 
-    tptr = list;
+
+    tptr = head;
 
     while(tptr->roll != roll_no)
     {
         if(tptr->next == NULL)
         {
-            printf("Roll no %d is not found!!!\n",roll_no);
+            printf("[opps ➭➭➭]Roll no %d is not found!!!\n",roll_no);
             break;
         }
         tptr = tptr->next;
     }
 
     if(tptr->roll == roll_no){
-        printf("Roll no %d is found !!!\n",roll_no);
-        printf("Enter new name: ");
+        printf("[OPPS➭➭➭] Roll  %d is not found !!!\n",roll_no);
+        printf("[▶]Enter new name ====>");
         fflush(stdin);
         gets(Name);
-        printf("Enter new cgpa: ");
+        printf("[▶] Enter new cgpa===> ");
         scanf("%lf",&Cgpa);
 
         strcpy(tptr->name,Name);
         tptr->cgpa = Cgpa;
-        printf("Updation successfull!!!\n\n");
+        printf("[✪✪✪] Updation successfull :) \n\n");
     }
 
 }
 
-void display(node* list)
+void display(node* head)
 {
-    tptr = list;
+    tptr = head;
     if(tptr == NULL){
         return;
     }
     else{
-        printf("Roll number : %d\n",tptr->roll);
-        printf("Name : %s\n",tptr->name);
-        printf("Cgpa : %.2lf\n\n",tptr->cgpa);
+        printf("[☞]Roll number : %d\n",tptr->roll);
+        printf("[☞]Name : %s\n",tptr->name);
+        printf("[☞]Cgpa : %.2lf\n\n",tptr->cgpa);
         display(tptr->next);
     }
 }
 
+
+
+int main()
+{
+    printf();
+}
